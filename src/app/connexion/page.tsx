@@ -3,6 +3,8 @@ import { signIn } from "@/lib/auth-actions";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
+import { Footer } from "@/components/Footer";
+import { BoutonGoogle } from "@/components/BoutonGoogle";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 
@@ -68,6 +70,14 @@ export default async function ConnexionPage({
           </button>
         </form>
 
+        <div className="mt-5 flex items-center gap-3">
+          <div className="h-px flex-1" style={{ background: "var(--line)" }} />
+          <span className="text-caption text-ink-muted">{d.auth.ou}</span>
+          <div className="h-px flex-1" style={{ background: "var(--line)" }} />
+        </div>
+
+        <BoutonGoogle locale={locale} className="mt-5" />
+
         <p className="mt-6 text-sm text-foreground/70">
           {d.auth.pasDeCompte}{" "}
           <Link href="/inscription" className="link-warm">
@@ -76,6 +86,7 @@ export default async function ConnexionPage({
         </p>
       </div>
       </div>
+      <Footer locale={locale} />
     </div>
   );
 }

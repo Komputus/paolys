@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
+import { Footer } from "@/components/Footer";
+import { getLocale } from "@/lib/i18n/locale";
 
 // Contenu de base — a faire valider par un juriste avant un lancement
 // officiel (paiement reel, echelle). Couvre les points essentiels : age
 // minimum, comportement attendu, abonnement/paiement, moderation, droit
 // applicable (Cote d'Ivoire), contact.
-export default function CguPage() {
+export default async function CguPage() {
+  const locale = await getLocale();
   return (
     <div className="page-bg flex flex-1 flex-col overflow-y-auto">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
@@ -123,6 +126,7 @@ export default function CguPage() {
           </section>
         </div>
       </div>
+      <Footer locale={locale} />
     </div>
   );
 }

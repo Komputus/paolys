@@ -8,6 +8,7 @@ import { Wordmark } from "@/components/brand/Wordmark";
 import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { Footer } from "@/components/Footer";
 
 export default async function PremiumPage({
   searchParams,
@@ -112,6 +113,7 @@ export default async function PremiumPage({
         )}
       </div>
       </div>
+      <Footer locale={locale} />
     </div>
   );
 }

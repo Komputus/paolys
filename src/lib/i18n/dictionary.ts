@@ -23,6 +23,12 @@ const fr = {
     copier: "Copier",
     copie: "Copié ✓",
   },
+  footer: {
+    cgu: "CGU",
+    confidentialite: "Confidentialité",
+    mentionsLegales: "Mentions légales",
+    contact: "Contact",
+  },
   home: {
     kicker: "Il était une fois",
     tagline: "Derrière chaque profil, une vraie personne, pour des amitiés et rencontres sincères",
@@ -56,6 +62,7 @@ const fr = {
     ctaFinaleTitre: "Prêt·e à faire de vraies rencontres ?",
     footerTexte: "Fait avec ♥",
     decouvrirPremium: "✨ Découvrir Paolys+",
+    statProfilsVerifies: "profils vérifiés",
   },
   langue: {
     francais: "FR",
@@ -81,6 +88,9 @@ const fr = {
     politiqueConfidentialite: "Politique de Confidentialité",
     erreurConditions: "Merci de confirmer ton âge et d'accepter les conditions pour continuer.",
     motDePasseOublie: "Mot de passe oublié ?",
+    ou: "ou",
+    continuerAvecGoogle: "Continuer avec Google",
+    chargement: "Chargement…",
     erreurs: {
       "Invalid login credentials": "Email ou mot de passe incorrect.",
       "User already registered": "Un compte existe déjà avec cet email.",
@@ -391,6 +401,12 @@ const en: Dictionary = {
     copier: "Copy",
     copie: "Copied ✓",
   },
+  footer: {
+    cgu: "Terms",
+    confidentialite: "Privacy",
+    mentionsLegales: "Legal notice",
+    contact: "Contact",
+  },
   home: {
     kicker: "Once upon a time",
     tagline: "Behind every profile, a real person, for genuine friendships and encounters",
@@ -424,6 +440,7 @@ const en: Dictionary = {
     ctaFinaleTitre: "Ready for real encounters?",
     footerTexte: "Made with ♥",
     decouvrirPremium: "✨ Discover Paolys+",
+    statProfilsVerifies: "verified profiles",
   },
   langue: {
     francais: "FR",
@@ -449,6 +466,9 @@ const en: Dictionary = {
     politiqueConfidentialite: "Privacy Policy",
     erreurConditions: "Please confirm your age and accept the terms to continue.",
     motDePasseOublie: "Forgot password?",
+    ou: "or",
+    continuerAvecGoogle: "Continue with Google",
+    chargement: "Loading…",
     erreurs: {
       "Invalid login credentials": "Incorrect email or password.",
       "User already registered": "An account already exists with this email.",

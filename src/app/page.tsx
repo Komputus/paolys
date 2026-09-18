@@ -3,12 +3,17 @@ import Link from "next/link";
 import { HeroArt } from "@/components/HeroArt";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Wordmark } from "@/components/brand/Wordmark";
+import { Footer } from "@/components/Footer";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
+import { createClient } from "@/lib/supabase/server";
 
 export default async function Home() {
   const locale = await getLocale();
   const d = getDictionary(locale);
+
+  const supabase = await createClient();
+  const { data: nbProfilsVerifies } = await supabase.rpc("combien_de_profils_verifies");
 
   return (
     <div className="page-bg flex flex-1 flex-col">
@@ -155,6 +160,16 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Preuve sociale — uniquement si le chiffre reel est assez grand pour
+          etre convaincant ; en dessous, il serait contre-productif de
+          l'afficher. Jamais de nombre invente ici. */}
+      {typeof nbProfilsVerifies === "number" && nbProfilsVerifies >= 10 && (
+        <section className="flex flex-col items-center gap-1 px-6 py-2 text-center">
+          <p className="font-display text-3xl text-brand">{nbProfilsVerifies}+</p>
+          <p className="text-body text-ink-muted">{d.home.statProfilsVerifies}</p>
+        </section>
+      )}
+
       {/* CTA finale */}
       <section className="flex flex-col items-center gap-6 px-6 py-8 text-center">
         <p className="font-display text-2xl text-foreground sm:text-3xl">
@@ -176,10 +191,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <footer className="flex flex-col items-center gap-2 px-6 pb-10 text-center">
-        <Wordmark size="sm" />
-        <p className="text-caption text-ink-muted">{d.home.footerTexte}</p>
-      </footer>
+      <Footer locale={locale} />
     </div>
   );
 }

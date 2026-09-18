@@ -3,6 +3,8 @@ import { signUp } from "@/lib/auth-actions";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
+import { Footer } from "@/components/Footer";
+import { BoutonGoogle } from "@/components/BoutonGoogle";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 
@@ -98,6 +100,14 @@ export default async function InscriptionPage({
           </button>
         </form>
 
+        <div className="mt-5 flex items-center gap-3">
+          <div className="h-px flex-1" style={{ background: "var(--line)" }} />
+          <span className="text-caption text-ink-muted">{d.auth.ou}</span>
+          <div className="h-px flex-1" style={{ background: "var(--line)" }} />
+        </div>
+
+        <BoutonGoogle locale={locale} className="mt-5" />
+
         <p className="mt-6 text-sm text-foreground/70">
           {d.auth.dejaUnCompte}{" "}
           <Link href="/connexion" className="link-warm">
@@ -106,6 +116,7 @@ export default async function InscriptionPage({
         </p>
       </div>
       </div>
+      <Footer locale={locale} />
     </div>
   );
 }

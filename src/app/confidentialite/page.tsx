@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
+import { Footer } from "@/components/Footer";
+import { getLocale } from "@/lib/i18n/locale";
 
 // Contenu de base — a faire valider par un juriste avant un lancement
 // officiel, notamment au regard de la loi ivoirienne sur la protection des
 // donnees a caractere personnel (ARTCI) et, le cas echeant, du RGPD pour les
 // utilisateurs europeens.
-export default function ConfidentialitePage() {
+export default async function ConfidentialitePage() {
+  const locale = await getLocale();
   return (
     <div className="page-bg flex flex-1 flex-col overflow-y-auto">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
@@ -105,6 +108,7 @@ export default function ConfidentialitePage() {
           </section>
         </div>
       </div>
+      <Footer locale={locale} />
     </div>
   );
 }
