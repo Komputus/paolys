@@ -115,7 +115,7 @@ export default async function ProfilPage() {
           </p>
         ) : (
           <div
-            className="card-warm mt-4 p-5 text-left"
+            className="card-warm mt-4 p-5 text-center"
             style={{ border: "1px solid var(--mangue)", background: "var(--mangue-tint)" }}
           >
             <p className="text-heading" style={{ color: "var(--lagune)" }}>
