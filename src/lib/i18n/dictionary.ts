@@ -12,6 +12,7 @@ const fr = {
   nav: {
     monProfil: "← Mon profil",
     messages: "← Messages",
+    accueil: "← Accueil",
     aProximite: "À proximité",
     rencontres: "Rencontres",
     likes: "Likes",
@@ -54,6 +55,7 @@ const fr = {
       "Vérification par photo, signalement et blocage en un geste, modération active : ta sécurité n'est pas une option.",
     ctaFinaleTitre: "Prêt·e à faire de vraies rencontres ?",
     footerTexte: "Fait avec ♥",
+    decouvrirPremium: "✨ Découvrir Paolys+",
   },
   langue: {
     francais: "FR",
@@ -378,6 +380,7 @@ const en: Dictionary = {
   nav: {
     monProfil: "← My profile",
     messages: "← Messages",
+    accueil: "← Home",
     aProximite: "Nearby",
     rencontres: "Encounters",
     likes: "Likes",
@@ -420,6 +423,7 @@ const en: Dictionary = {
       "Photo verification, one-tap reporting and blocking, active moderation: your safety isn't optional.",
     ctaFinaleTitre: "Ready for real encounters?",
     footerTexte: "Made with ♥",
+    decouvrirPremium: "✨ Discover Paolys+",
   },
   langue: {
     francais: "FR",

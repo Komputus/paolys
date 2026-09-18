@@ -44,6 +44,9 @@ export default async function Home() {
             {d.home.dejaCompte}
           </Link>
         </div>
+        <Link href="/premium" className="mt-4 text-sm font-medium text-gold underline">
+          {d.home.decouvrirPremium}
+        </Link>
       </section>
 
       {/* Trombinoscope — 3 photos rondes (seule touche photographique de la

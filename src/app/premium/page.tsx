@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { demarrerAbonnement } from "@/lib/payment-actions";
 import { FORMULES } from "@/lib/premium-pricing";
@@ -22,15 +21,16 @@ export default async function PremiumPage({
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    redirect("/connexion");
-  }
-
-  const { data: profil } = await supabase
-    .from("profiles")
-    .select("premium_until")
-    .eq("id", user.id)
-    .maybeSingle();
+  // Page publique (accessible sans compte, pour servir de vitrine marketing) —
+  // seul le clic sur "S'abonner" exige une connexion (demarrerAbonnement le
+  // verifie et redirige vers /connexion si besoin).
+  const { data: profil } = user
+    ? await supabase
+        .from("profiles")
+        .select("premium_until")
+        .eq("id", user.id)
+        .maybeSingle()
+    : { data: null };
 
   const estPremium = Boolean(
     profil?.premium_until && new Date(profil.premium_until) > new Date(),
@@ -45,8 +45,8 @@ export default async function PremiumPage({
       </div>
       <div className="flex flex-1 justify-center px-6 pb-12 pt-4">
       <div className="card-warm w-full max-w-sm p-8">
-        <Link href="/profil" className="link-warm text-sm">
-          {d.nav.monProfil}
+        <Link href={user ? "/profil" : "/"} className="link-warm text-sm">
+          {user ? d.nav.monProfil : d.nav.accueil}
         </Link>
         <span className="mt-4 block text-sm font-medium tracking-[0.3em] text-gold uppercase">
           {d.premium.edition}
