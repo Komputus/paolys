@@ -49,7 +49,7 @@ export default async function Home() {
             {d.home.dejaCompte}
           </Link>
         </div>
-        <Link href="/premium" className="mt-4 text-sm font-bold text-lagune underline">
+        <Link href="/premium" className="mt-4 text-base font-bold text-lagune underline">
           {d.home.decouvrirPremium}
         </Link>
       </section>
