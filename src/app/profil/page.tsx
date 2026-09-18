@@ -118,13 +118,17 @@ export default async function ProfilPage() {
             className="card-warm mt-4 p-5 text-left"
             style={{ border: "1px solid var(--mangue)", background: "var(--mangue-tint)" }}
           >
-            <p className="text-heading" style={{ color: "var(--mangue-dark)" }}>
+            <p className="text-heading" style={{ color: "var(--lagune)" }}>
               {d.profil.passerPremiumTitre}
             </p>
             <p className="text-body mt-1" style={{ color: "var(--ink)" }}>
               {d.profil.passerPremiumTexte}
             </p>
-            <Link href="/premium" className="btn-primary-warm mt-4 block w-full text-center">
+            <Link
+              href="/premium"
+              className="btn-primary-warm mt-4 block w-full text-center"
+              style={{ background: "var(--lagune)", boxShadow: "none" }}
+            >
               {d.profil.passerPremium}
             </Link>
           </div>
