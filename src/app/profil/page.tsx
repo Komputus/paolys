@@ -31,7 +31,7 @@ export default async function ProfilPage() {
   const { data: profil } = await supabase
     .from("profiles")
     .select(
-      "display_name, city, bio, photo_verified, premium_until, boosted_until, hidden_from_discovery, referral_code",
+      "display_name, city, bio, photo_verified, premium_until, boosted_until, boost_last_used_at, hidden_from_discovery, referral_code",
     )
     .eq("id", user.id)
     .maybeSingle();
@@ -137,6 +137,7 @@ export default async function ProfilPage() {
         {estPremium && (
           <PremiumControls
             boostedUntil={profil.boosted_until}
+            boostLastUsedAt={profil.boost_last_used_at}
             hiddenFromDiscovery={profil.hidden_from_discovery}
             locale={locale}
           />

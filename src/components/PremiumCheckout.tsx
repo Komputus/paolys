@@ -111,9 +111,20 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      <button type="submit" className="btn-primary-warm w-full">
+      <button
+        type="submit"
+        disabled={!PAIEMENT_ACTIF}
+        title={!PAIEMENT_ACTIF ? d.premium.paiementBientot : undefined}
+        className="btn-primary-warm w-full disabled:opacity-50"
+      >
         {d.premium.sAbonner(FORMULES[formule].montantFcfa)}
       </button>
+
+      {!PAIEMENT_ACTIF && (
+        <p className="text-center text-xs font-medium text-foreground/60">
+          {d.premium.paiementBientot}
+        </p>
+      )}
 
       <p className="flex items-center justify-center gap-1.5 text-center text-xs" style={{ color: "var(--lagune)" }}>
         <IconCadenas />
@@ -122,6 +133,11 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
     </form>
   );
 }
+
+// Paiement pas encore ouvert au public — bouton visible mais inactif tant
+// que l'integration CinetPay n'est pas validee en conditions reelles.
+// Repasser a true quand le paiement doit devenir fonctionnel.
+const PAIEMENT_ACTIF = false;
 
 function IconTelephone() {
   return (

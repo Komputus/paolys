@@ -393,7 +393,7 @@ const fr = {
       },
       {
         titre: "Boost de visibilité",
-        texte: "Passe en tête des profils vus pendant 30 minutes.",
+        texte: "1 boost offert par jour : 15 minutes en tête des profils vus. Non cumulable, perdu s'il n'est pas utilisé dans la journée.",
       },
       {
         titre: "Retour en arrière",
@@ -432,10 +432,12 @@ const fr = {
     abonnerSemaine: (montant: number) => `S'abonner 1 semaine — ${montant} FCFA`,
     paiementSecurise:
       "Paiement sécurisé via CinetPay (Orange Money, MTN, Wave, Moov, carte).",
+    paiementBientot: "Paiement bientôt disponible",
   },
   premiumControls: {
     boostActif: (heure: string) => `Boost actif jusqu'à ${heure}`,
-    boosterProfil: "Booster mon profil (24h)",
+    boosterProfil: "Booster mon profil (15 min, 1x/jour)",
+    prochainBoost: (heure: string) => `Prochain boost demain à ${heure}`,
     modeDiscret: "Mode discret (invisible en découverte)",
   },
   profilsExclusifs: {
@@ -945,7 +947,7 @@ const en: Dictionary = {
       },
       {
         titre: "Visibility boost",
-        texte: "Jump to the front of the profiles seen for 30 minutes.",
+        texte: "1 free boost per day: 15 minutes at the front of the profiles seen. Not cumulative, lost if unused that day.",
       },
       {
         titre: "Undo",
@@ -984,10 +986,12 @@ const en: Dictionary = {
     abonnerSemaine: (montant: number) => `Subscribe for 1 week — ${montant} FCFA`,
     paiementSecurise:
       "Secure payment via CinetPay (Orange Money, MTN, Wave, Moov, card).",
+    paiementBientot: "Payment coming soon",
   },
   premiumControls: {
     boostActif: (heure: string) => `Boost active until ${heure}`,
-    boosterProfil: "Boost my profile (24h)",
+    boosterProfil: "Boost my profile (15 min, 1x/day)",
+    prochainBoost: (heure: string) => `Next boost tomorrow at ${heure}`,
     modeDiscret: "Discreet mode (invisible in discovery)",
   },
   profilsExclusifs: {
