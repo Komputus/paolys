@@ -88,12 +88,20 @@ export default async function PremiumPage({
         ) : (
           <div className="mt-8 flex flex-col gap-3">
             <form action={demarrerAbonnement.bind(null, "mois")}>
-              <button type="submit" className="btn-primary-warm w-full">
+              <button
+                type="submit"
+                className="btn-primary-warm w-full whitespace-nowrap text-sm"
+                style={{ padding: "0.75rem 0.5rem" }}
+              >
                 {d.premium.abonnerMois(FORMULES.mois.montantFcfa)}
               </button>
             </form>
             <form action={demarrerAbonnement.bind(null, "semaine")}>
-              <button type="submit" className="btn-secondary-warm w-full">
+              <button
+                type="submit"
+                className="btn-secondary-warm w-full whitespace-nowrap text-sm"
+                style={{ padding: "0.75rem 0.5rem" }}
+              >
                 {d.premium.abonnerSemaine(FORMULES.semaine.montantFcfa)}
               </button>
             </form>
