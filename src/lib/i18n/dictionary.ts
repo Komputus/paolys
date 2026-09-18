@@ -430,8 +430,7 @@ const fr = {
     abonnementActif: (date: string) => `Abonnement actif jusqu'au ${date}`,
     abonnerMois: (montant: number) => `S'abonner 1 mois — ${montant} FCFA`,
     abonnerSemaine: (montant: number) => `S'abonner 1 semaine — ${montant} FCFA`,
-    paiementSecurise:
-      "Paiement sécurisé via CinetPay (Orange Money, MTN, Wave, Moov, carte).",
+    paiementSecurise: "Paiement sécurisé via CinetPay.",
     paiementBientot: "Paiement bientôt disponible",
   },
   premiumControls: {
@@ -984,8 +983,7 @@ const en: Dictionary = {
     abonnementActif: (date: string) => `Subscription active until ${date}`,
     abonnerMois: (montant: number) => `Subscribe for 1 month — ${montant} FCFA`,
     abonnerSemaine: (montant: number) => `Subscribe for 1 week — ${montant} FCFA`,
-    paiementSecurise:
-      "Secure payment via CinetPay (Orange Money, MTN, Wave, Moov, card).",
+    paiementSecurise: "Secure payment via CinetPay.",
     paiementBientot: "Payment coming soon",
   },
   premiumControls: {
