@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100">
+  <defs>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff5d7e"/>
+      <stop offset="55%" stop-color="#ffb648"/>
+      <stop offset="100%" stop-color="#4f8ef7"/>
+    </linearGradient>
+  </defs>
+
+  <text
+    x="0"
+    y="72"
+    font-family="Fraunces, Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-weight="600"
+    font-size="64"
+    fill="url(#wordmark)"
+  >Paolys</text>
+</svg>

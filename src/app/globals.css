@@ -1,0 +1,352 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   DESIGN SYSTEM OFFICIEL PAOLYS v3 (2026-09-17)
+   Source : project/tokens.json + project/README.md du design system partagé
+   par Manno. Remplace entierement l'ancienne palette corail/or/azur-ancien-
+   sens. Les noms de classes historiques (-warm) sont conserves pour eviter
+   de toucher tous les fichiers composants, mais leurs VALEURS pointent
+   desormais sur les tokens officiels — plus aucune trace de l'ancienne
+   palette ni de degrade dans ce fichier.
+   ========================================================================= */
+:root {
+  --surface-100: #f6ecd8;
+  --surface-200: #fffdf7;
+  --ink: #241729;
+  --ink-muted: #7a6570;
+  --azur: #2e5aa8;
+  --rose: #c6316b;
+  --mangue: #d9821f;
+  --mangue-tint: #fbe4c3;
+  --lagune: #146b68;
+  --line: #e9d7b0;
+
+  --mangue-dark: color-mix(in srgb, var(--mangue) 80%, black);
+  --azur-dark: color-mix(in srgb, var(--azur) 80%, black);
+  --azur-tint: color-mix(in srgb, var(--azur) 14%, white);
+  --lagune-tint: color-mix(in srgb, var(--lagune) 14%, white);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-full: 9999px;
+
+  /* Alias historiques (utilises par les classes -warm ci-dessous et par des
+     classes Tailwind directes dans les composants : text-brand, bg-gold...) */
+  --background: var(--surface-100);
+  --surface: var(--surface-200);
+  --foreground: var(--ink);
+  --muted: var(--ink-muted);
+  --brand: var(--mangue);
+  --brand-dark: var(--mangue-dark);
+  --brand-light: var(--mangue-tint);
+  --gold: var(--mangue);
+  --gold-light: var(--mangue-tint);
+  --sky: var(--azur);
+  --sky-dark: var(--azur-dark);
+  --sky-light: var(--azur-tint);
+  --shadow-soft: 36, 23, 41;
+}
+
+/* Mode sombre desactive (2026-09-18, demande Manno) : le site doit toujours
+   afficher le fond clair/beige ci-dessus, meme si le systeme de l'utilisateur
+   est en theme sombre. Bloc conserve en commentaire au cas ou un vrai
+   bouton clair/sombre serait redemande plus tard — il suffit de decommenter
+   et de re-ajouter les 2 lignes --azur-tint/--lagune-tint qui recalculaient
+   ces teintes pour rester lisibles sur fond sombre. */
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-100: #241729;
+    --surface-200: #2e1d34;
+    --ink: #f8efe1;
+    --ink-muted: #c9b8c4;
+    --azur: #7ca6e3;
+    --rose: #ea6f9a;
+    --mangue: #eba854;
+    --mangue-tint: #4a381f;
+    --lagune: #4aa39d;
+    --line: #4a3550;
+    --shadow-soft: 0, 0, 0;
+    --azur-tint: color-mix(in srgb, var(--azur) 20%, var(--surface-200));
+    --lagune-tint: color-mix(in srgb, var(--lagune) 20%, var(--surface-200));
+  }
+}
+*/
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-light: var(--brand-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-sky: var(--sky);
+  --color-sky-dark: var(--sky-dark);
+  --color-sky-light: var(--sky-light);
+
+  --color-surface-100: var(--surface-100);
+  --color-surface-200: var(--surface-200);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-azur: var(--azur);
+  --color-rose: var(--rose);
+  --color-mangue: var(--mangue);
+  --color-mangue-tint: var(--mangue-tint);
+  --color-lagune: var(--lagune);
+  --color-line: var(--line);
+
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-fredoka);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Barres de defilement masquees partout (look "app", pas de decalage de
+   largeur entre une page courte sans scroll et une page longue avec) — le
+   defilement reste fonctionnel (molette, tactile, clavier), juste sans barre
+   visible. S'applique au document et a tous les conteneurs overflow-y-auto
+   utilises dans les ecrans en h-dvh (Profil, Decouverte, Messages...). */
+html,
+body,
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.font-display {
+  font-family: var(--font-display), "Baloo 2", system-ui, sans-serif;
+}
+
+/* Styles de texte du design system (project/tokens.json > type.groups) */
+.text-display-lg {
+  font-family: var(--font-display), "Baloo 2", system-ui, sans-serif;
+  font-size: 58px;
+  line-height: 58px;
+  font-weight: 600;
+}
+
+.text-display-md {
+  font-family: var(--font-display), "Baloo 2", system-ui, sans-serif;
+  font-size: 34px;
+  line-height: 38px;
+  font-weight: 600;
+}
+
+.text-heading {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.text-body-lg {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.text-body {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.text-caption {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.text-button {
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+
+.card-warm {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow:
+    0 1px 2px rgba(var(--shadow-soft), 0.06),
+    0 16px 36px -16px rgba(var(--shadow-soft), 0.16);
+}
+
+.field-warm {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 0.65rem 1rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field-warm:focus {
+  border-color: var(--mangue);
+  box-shadow: 0 0 0 3px var(--mangue-tint);
+}
+
+.btn-primary-warm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.75rem;
+  font-weight: 800;
+  color: white;
+  background: var(--mangue);
+  box-shadow: 0 8px 20px -6px color-mix(in srgb, var(--mangue) 50%, transparent);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary-warm:hover {
+  background: var(--mangue-dark);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.btn-primary-warm:disabled {
+  opacity: 0.5;
+  transform: none;
+}
+
+.btn-secondary-warm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.75rem;
+  font-weight: 800;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.btn-secondary-warm:hover {
+  background: var(--surface);
+}
+
+/* Lien texte inline (navigation) — toujours souligné, pour ne jamais se
+   confondre avec un bouton d'action stylé en texte. */
+.link-warm {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link-warm:hover {
+  color: var(--mangue-dark);
+}
+
+/* Bouton d'action discret (annuler, se déconnecter, signaler...) — jamais
+   souligné, toujours un fond visible en chip, pour se distinguer clairement
+   d'un lien de navigation. */
+.btn-tertiary-warm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  padding: 0.4rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: rgba(var(--shadow-soft), 0.06);
+  transition: background-color 0.15s ease;
+}
+
+.btn-tertiary-warm:hover {
+  background: rgba(var(--shadow-soft), 0.12);
+}
+
+.btn-tertiary-warm:disabled {
+  opacity: 0.5;
+}
+
+/* Accent de confiance (verification, paiement, moderation) — role reserve a
+   `lagune`, distinct de `mangue` qui porte l'action de rencontre. */
+.chip-sky {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--lagune);
+  background: var(--lagune-tint);
+}
+
+.badge-trust {
+  color: var(--lagune);
+  font-weight: 700;
+}
+
+/* Fond d'écran officiel ("le ciel qui bascule" — project/README.md >
+   "Fonds d'écran") : trois lueurs radiales fixes (azur haut-droite, rose
+   bas-gauche, mangue centre), toujours aux mêmes positions et opacités —
+   ne jamais les monter ni en ajouter une quatrième. Reservé aux écrans
+   pleins (Découverte, Messages, Profil, onboarding) ; `card-warm`/
+   `surface-200` reste toujours uni, sans lueur. `background-attachment:
+   fixed` : les lueurs ne bougent pas quand le contenu défile. */
+.page-bg {
+  background-color: var(--surface-100);
+  background-image:
+    radial-gradient(ellipse 380px 340px at 108% -12%, rgba(46, 90, 168, 0.1), transparent 68%),
+    radial-gradient(ellipse 340px 300px at -14% 112%, rgba(198, 49, 107, 0.09), transparent 68%),
+    radial-gradient(ellipse 240px 240px at 62% 34%, rgba(217, 130, 31, 0.06), transparent 72%);
+  background-attachment: fixed;
+}
+
+/* Mode sombre desactive (voir plus haut) : lueurs dark-mode aussi mises en
+   commentaire pour ne pas se declencher sur le fond clair fixe. */
+/*
+@media (prefers-color-scheme: dark) {
+  .page-bg {
+    background-image:
+      radial-gradient(ellipse 380px 340px at 108% -12%, rgba(124, 166, 227, 0.16), transparent 68%),
+      radial-gradient(ellipse 340px 300px at -14% 112%, rgba(234, 111, 154, 0.15), transparent 68%),
+      radial-gradient(ellipse 240px 240px at 62% 34%, rgba(235, 168, 84, 0.09), transparent 72%);
+  }
+}
+*/
+
+/* Mot-symbole "paolys" : toujours en bas de casse, jamais en `ink` ni en une
+   seule teinte — chaque lettre porte sa couleur de la charte (p azur, a
+   rose, o mangue, l lagune, y rose, s azur). Voir composant Wordmark. */
+.paolys-wordmark span[data-letter="p"],
+.paolys-wordmark span[data-letter="s"] {
+  color: var(--azur);
+}
+
+.paolys-wordmark span[data-letter="a"],
+.paolys-wordmark span[data-letter="y"] {
+  color: var(--rose);
+}
+
+.paolys-wordmark span[data-letter="o"] {
+  color: var(--mangue);
+}
+
+.paolys-wordmark span[data-letter="l"] {
+  color: var(--lagune);
+}

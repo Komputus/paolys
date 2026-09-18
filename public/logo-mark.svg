@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff5d7e"/>
+      <stop offset="50%" stop-color="#ffb648"/>
+      <stop offset="100%" stop-color="#4f8ef7"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" fill="white"/>
+  <text
+    x="50"
+    y="72"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-weight="700"
+    font-size="68"
+    fill="url(#g)"
+  >P</text>
+</svg>
