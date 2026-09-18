@@ -73,6 +73,26 @@ export default async function InscriptionPage({
               className="field-warm mt-1"
             />
           </div>
+          <div className="flex items-start gap-2">
+            <input
+              type="checkbox"
+              id="accepteConditions"
+              name="accepteConditions"
+              required
+              className="mt-0.5 h-4 w-4 shrink-0 accent-mangue"
+            />
+            <label htmlFor="accepteConditions" className="text-xs text-foreground/70">
+              {d.auth.jaiAgeEtAccepte}{" "}
+              <Link href="/cgu" target="_blank" className="link-warm">
+                {d.auth.cgu}
+              </Link>{" "}
+              {d.auth.et}{" "}
+              <Link href="/confidentialite" target="_blank" className="link-warm">
+                {d.auth.politiqueConfidentialite}
+              </Link>
+              .
+            </label>
+          </div>
           <button type="submit" className="btn-primary-warm mt-2">
             {d.auth.creerMonCompte}
           </button>

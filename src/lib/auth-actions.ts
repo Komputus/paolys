@@ -15,6 +15,12 @@ export async function signUp(formData: FormData) {
   const password = String(formData.get("password") ?? "");
   const displayName = String(formData.get("displayName") ?? "");
   const codeParrainage = String(formData.get("ref") ?? "");
+  const accepteConditions = formData.get("accepteConditions") === "on";
+
+  if (!accepteConditions) {
+    const d = getDictionary(await getLocale());
+    redirect(`/inscription?erreur=${encodeURIComponent(d.auth.erreurConditions)}`);
+  }
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signUp({
@@ -60,4 +66,18 @@ export async function signOut() {
   const supabase = await createClient();
   await supabase.auth.signOut();
   redirect("/connexion");
+}
+
+export async function demanderReinitialisation(formData: FormData) {
+  const email = String(formData.get("email") ?? "");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+  const supabase = await createClient();
+  // Erreur volontairement ignoree : ne jamais reveler si un email existe ou
+  // non (enumeration de comptes), le message affiche est toujours le meme.
+  await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${siteUrl}/connexion/nouveau-mot-de-passe`,
+  });
+
+  redirect("/connexion/mot-de-passe-oublie?envoye=1");
 }

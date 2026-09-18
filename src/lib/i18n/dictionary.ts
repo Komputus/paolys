@@ -73,6 +73,12 @@ const fr = {
     creerMonCompte: "Créer mon compte",
     dejaUnCompte: "Déjà un compte ?",
     seConnecterLien: "Se connecter",
+    jaiAgeEtAccepte: "Je certifie avoir 18 ans ou plus et j'accepte les",
+    cgu: "Conditions Générales d'Utilisation",
+    et: "et la",
+    politiqueConfidentialite: "Politique de Confidentialité",
+    erreurConditions: "Merci de confirmer ton âge et d'accepter les conditions pour continuer.",
+    motDePasseOublie: "Mot de passe oublié ?",
     erreurs: {
       "Invalid login credentials": "Email ou mot de passe incorrect.",
       "User already registered": "Un compte existe déjà avec cet email.",
@@ -80,6 +86,23 @@ const fr = {
         "Le mot de passe doit contenir au moins 6 caractères.",
       "Email not confirmed": "Confirme d'abord ton email avant de te connecter.",
     } as Record<string, string>,
+  },
+  motDePasseOublie: {
+    titre: "Mot de passe oublié",
+    texte: "Indique ton email, on t'envoie un lien pour en choisir un nouveau.",
+    envoyer: "Envoyer le lien",
+    emailEnvoyeTitre: "Vérifie ta boîte mail",
+    emailEnvoyeTexte:
+      "Si un compte existe avec cet email, un lien de réinitialisation vient d'être envoyé.",
+    retourConnexion: "Retour à la connexion",
+  },
+  nouveauMotDePasse: {
+    titre: "Choisis un nouveau mot de passe",
+    label: "Nouveau mot de passe",
+    confirmer: "Mettre à jour le mot de passe",
+    succes: "Mot de passe mis à jour. Tu peux te connecter.",
+    erreurLienInvalide:
+      "Ce lien n'est plus valide. Redemande un lien de réinitialisation.",
   },
   verifiezEmails: {
     titre: "Vérifie ta boîte mail",
@@ -416,6 +439,12 @@ const en: Dictionary = {
     creerMonCompte: "Create my account",
     dejaUnCompte: "Already have an account?",
     seConnecterLien: "Sign in",
+    jaiAgeEtAccepte: "I certify that I am 18 or older and I agree to the",
+    cgu: "Terms of Service",
+    et: "and the",
+    politiqueConfidentialite: "Privacy Policy",
+    erreurConditions: "Please confirm your age and accept the terms to continue.",
+    motDePasseOublie: "Forgot password?",
     erreurs: {
       "Invalid login credentials": "Incorrect email or password.",
       "User already registered": "An account already exists with this email.",
@@ -423,6 +452,21 @@ const en: Dictionary = {
         "Password must be at least 6 characters long.",
       "Email not confirmed": "Please confirm your email before signing in.",
     } as Record<string, string>,
+  },
+  motDePasseOublie: {
+    titre: "Forgot password",
+    texte: "Enter your email and we'll send you a link to choose a new one.",
+    envoyer: "Send the link",
+    emailEnvoyeTitre: "Check your inbox",
+    emailEnvoyeTexte: "If an account exists with that email, a reset link was just sent.",
+    retourConnexion: "Back to sign in",
+  },
+  nouveauMotDePasse: {
+    titre: "Choose a new password",
+    label: "New password",
+    confirmer: "Update password",
+    succes: "Password updated. You can now sign in.",
+    erreurLienInvalide: "This link is no longer valid. Request a new reset link.",
   },
   verifiezEmails: {
     titre: "Check your inbox",

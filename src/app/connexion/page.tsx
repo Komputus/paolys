@@ -47,9 +47,14 @@ export default async function ConnexionPage({
             />
           </div>
           <div>
-            <label htmlFor="password" className="text-sm font-medium">
-              {d.auth.motDePasse}
-            </label>
+            <div className="flex items-center justify-between">
+              <label htmlFor="password" className="text-sm font-medium">
+                {d.auth.motDePasse}
+              </label>
+              <Link href="/connexion/mot-de-passe-oublie" className="link-warm text-xs">
+                {d.auth.motDePasseOublie}
+              </Link>
+            </div>
             <input
               id="password"
               name="password"
