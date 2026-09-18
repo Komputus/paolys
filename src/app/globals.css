@@ -317,6 +317,19 @@ body::-webkit-scrollbar,
   background-attachment: fixed;
 }
 
+/* `background-attachment: fixed` force un repaint couteux a chaque frame de
+   scroll sur mobile (Safari iOS et certains Chrome Android) et provoque des
+   glitches d'affichage sur les elements voisins (ex. pastilles numerotees de
+   "Comment ca marche" qui disparaissent brievement pendant le defilement).
+   Sur petit ecran, `scroll` evite ce bug ; les lueurs bougent legerement
+   avec le contenu au lieu de rester fixes, compromis invisible a cette
+   taille d'ecran. */
+@media (max-width: 768px) {
+  .page-bg {
+    background-attachment: scroll;
+  }
+}
+
 /* Mode sombre desactive (voir plus haut) : lueurs dark-mode aussi mises en
    commentaire pour ne pas se declencher sur le fond clair fixe. */
 /*
