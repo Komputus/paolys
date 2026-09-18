@@ -24,7 +24,7 @@ const fr = {
   },
   home: {
     kicker: "Il était une fois",
-    tagline: "Derrière chaque profil, une vraie personne,\npour des amitiés et rencontres sincères",
+    tagline: "Derrière chaque profil, une vraie personne, pour des amitiés et rencontres sincères",
     creerCompte: "Créer mon compte",
     dejaCompte: "J'ai déjà un compte",
     photosLegende: "De vraies personnes se cachent derrière chaque profil.",
@@ -133,6 +133,8 @@ const fr = {
         n > 0 ? ` ${n} déjà invité(e)s.` : ""
       }`,
     passerPremium: "Passer à Paolys+",
+    passerPremiumTitre: "✨ Débloque Paolys+",
+    passerPremiumTexte: "Vois qui t'a déjà aimé, filtres avancés, boost de visibilité — un peu plus de confort, sans jamais rendre l'essentiel payant.",
     premiumActif: (date: string) => `✨ Paolys+ actif jusqu'au ${date}`,
     decouvrirProfils: "Découvrir des profils",
     quiTaAime: "Qui t'a aimé",
@@ -365,7 +367,7 @@ const en: Dictionary = {
   },
   home: {
     kicker: "Once upon a time",
-    tagline: "Behind every profile, a real person,\nfor genuine friendships and encounters",
+    tagline: "Behind every profile, a real person, for genuine friendships and encounters",
     creerCompte: "Create my account",
     dejaCompte: "I already have an account",
     photosLegende: "Real people are behind every profile.",
@@ -474,6 +476,8 @@ const en: Dictionary = {
         n > 0 ? ` ${n} already invited.` : ""
       }`,
     passerPremium: "Upgrade to Paolys+",
+    passerPremiumTitre: "✨ Unlock Paolys+",
+    passerPremiumTexte: "See who already liked you, advanced filters, visibility boost — a bit more comfort, never a paywall on the essentials.",
     premiumActif: (date: string) => `✨ Paolys+ active until ${date}`,
     decouvrirProfils: "Discover profiles",
     quiTaAime: "Who liked you",

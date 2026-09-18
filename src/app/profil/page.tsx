@@ -105,9 +105,42 @@ export default async function ProfilPage() {
         {profil.city && <p className="mt-2 text-muted">{profil.city}</p>}
         {profil.bio && <p className="mt-4 text-foreground/80">{profil.bio}</p>}
 
+        {estPremium ? (
+          <p className="mt-4 inline-block rounded-full bg-brand-light px-4 py-1.5 text-sm font-medium text-brand-dark">
+            {d.profil.premiumActif(
+              new Date(profil.premium_until!).toLocaleDateString(
+                localeVersDateFnsTag(locale),
+              ),
+            )}
+          </p>
+        ) : (
+          <div
+            className="card-warm mt-4 p-5 text-left"
+            style={{ border: "1px solid var(--mangue)", background: "var(--mangue-tint)" }}
+          >
+            <p className="text-heading" style={{ color: "var(--mangue-dark)" }}>
+              {d.profil.passerPremiumTitre}
+            </p>
+            <p className="text-body mt-1" style={{ color: "var(--ink)" }}>
+              {d.profil.passerPremiumTexte}
+            </p>
+            <Link href="/premium" className="btn-primary-warm mt-4 block w-full text-center">
+              {d.profil.passerPremium}
+            </Link>
+          </div>
+        )}
+
+        {estPremium && (
+          <PremiumControls
+            boostedUntil={profil.boosted_until}
+            hiddenFromDiscovery={profil.hidden_from_discovery}
+            locale={locale}
+          />
+        )}
+
         <Link
           href="/profil/modifier"
-          className="mt-3 inline-block text-sm font-medium text-brand underline"
+          className="mt-4 inline-block text-sm font-medium text-brand underline"
         >
           {d.profil.modifierProfil}
         </Link>
@@ -148,31 +181,6 @@ export default async function ProfilPage() {
             locale={locale}
           />
         </div>
-
-        {estPremium ? (
-          <p className="mt-4 inline-block rounded-full bg-brand-light px-4 py-1.5 text-sm font-medium text-brand-dark">
-            {d.profil.premiumActif(
-              new Date(profil.premium_until!).toLocaleDateString(
-                localeVersDateFnsTag(locale),
-              ),
-            )}
-          </p>
-        ) : (
-          <Link
-            href="/premium"
-            className="mt-4 inline-block text-sm font-medium text-gold underline"
-          >
-            {d.profil.passerPremium}
-          </Link>
-        )}
-
-        {estPremium && (
-          <PremiumControls
-            boostedUntil={profil.boosted_until}
-            hiddenFromDiscovery={profil.hidden_from_discovery}
-            locale={locale}
-          />
-        )}
 
         <div className="mt-8 flex flex-col gap-3">
           <Link href="/decouverte" className="btn-primary-warm">

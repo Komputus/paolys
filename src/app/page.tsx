@@ -27,7 +27,7 @@ export default async function Home() {
         <h1 className="mt-3">
           <Wordmark size="lg" />
         </h1>
-        <p className="mt-5 max-w-md text-lg leading-relaxed whitespace-pre-line text-foreground/80">
+        <p className="mt-5 max-w-md text-lg leading-relaxed text-foreground/80">
           {d.home.tagline}
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
