@@ -29,6 +29,144 @@ const fr = {
     mentionsLegales: "Mentions légales",
     contact: "Contact",
   },
+  cgu: {
+    titre: "Conditions Générales d'Utilisation",
+    miseAJour: "Dernière mise à jour : septembre 2026",
+    sections: [
+      {
+        titre: "1. Objet et acceptation",
+        texte:
+          "Les présentes Conditions Générales d'Utilisation (« CGU ») régissent l'accès et l'utilisation de l'application Paolys (« le Service »), éditée depuis la Côte d'Ivoire. En créant un compte, tu acceptes sans réserve les présentes CGU ainsi que la Politique de Confidentialité.",
+      },
+      {
+        titre: "2. Âge minimum",
+        texte:
+          "Paolys est strictement réservé aux personnes âgées de 18 ans ou plus. En créant un compte, tu certifies avoir au moins 18 ans. Tout compte dont l'âge déclaré s'avère inexact ou inférieur à 18 ans sera supprimé sans préavis.",
+      },
+      {
+        titre: "3. Ton compte",
+        texte:
+          "Tu es responsable de l'exactitude des informations fournies (nom, âge, photos) et de la confidentialité de ton mot de passe. Un seul compte par personne est autorisé. Tu t'engages à ne publier que des photos et informations te concernant réellement — les faux profils sont interdits et entraînent la suppression du compte.",
+      },
+      {
+        titre: "4. Comportement attendu",
+        texte:
+          "Il est interdit d'utiliser Paolys pour : harceler ou menacer un autre membre, publier du contenu haineux, illégal ou à caractère pornographique, usurper l'identité d'autrui, solliciter de l'argent à d'autres membres (arnaques), ou utiliser le Service à des fins commerciales non autorisées. Tout signalement fait l'objet d'une modération ; un compte peut être suspendu ou supprimé en cas de manquement.",
+      },
+      {
+        titre: "5. Vérification de profil",
+        texte:
+          "Paolys propose une vérification optionnelle par selfie, comparée aux photos de profil, pour obtenir un badge « Profil vérifié ». Cette vérification ne garantit pas l'identité complète d'un membre ; elle vise seulement à confirmer que les photos correspondent à une personne réelle.",
+      },
+      {
+        titre: "6. Abonnement Paolys+ et paiement",
+        texte:
+          "L'essentiel du Service (swipes, matchs, messages) est et restera gratuit. L'abonnement payant optionnel « Paolys+ » donne accès à des fonctionnalités de confort (voir qui t'a aimé, filtres avancés, boost de visibilité). Les paiements sont traités par notre prestataire CinetPay (Orange Money, MTN Money, Wave, Moov Money, carte bancaire) ; Paolys ne stocke aucune donnée de carte bancaire. Les montants et durées sont indiqués avant tout paiement. Sauf erreur technique de notre part, les abonnements ne sont pas remboursables une fois activés.",
+      },
+      {
+        titre: "7. Suspension et résiliation",
+        texte:
+          "Tu peux supprimer ton compte à tout moment en nous contactant. Paolys se réserve le droit de suspendre ou supprimer un compte en cas de violation des présentes CGU, sans obligation de remboursement des sommes déjà versées.",
+      },
+      {
+        titre: "8. Responsabilité",
+        texte:
+          "Paolys met en relation des personnes mais ne peut garantir l'exactitude des informations fournies par les membres, ni la sécurité des rencontres organisées en dehors de l'application. Nous t'invitons à rester prudent·e : privilégie un premier rendez-vous dans un lieu public et informe un proche de tes plans (l'application propose un outil dédié à cet effet).",
+      },
+      {
+        titre: "9. Droit applicable",
+        texte:
+          "Les présentes CGU sont soumises au droit ivoirien. Tout litige relève des juridictions compétentes de Côte d'Ivoire.",
+      },
+      {
+        titre: "10. Contact",
+        texte:
+          "Pour toute question relative aux présentes CGU, contacte-nous à l'adresse indiquée dans l'application.",
+      },
+    ],
+  },
+  confidentialite: {
+    titre: "Politique de Confidentialité",
+    miseAJour: "Dernière mise à jour : septembre 2026",
+    sections: [
+      {
+        titre: "1. Données que nous collectons",
+        items: [
+          "Informations de profil : prénom, date de naissance, genre, ville, bio, photos, prompts.",
+          "Position géographique (optionnelle), utilisée pour te montrer des profils proches.",
+          "Contenu des messages échangés avec tes matchs.",
+          "Selfie de vérification (si tu utilises cette fonctionnalité), analysé automatiquement puis conservé pour la modération.",
+          "Informations de paiement lors d'un abonnement Paolys+ (traitées par CinetPay — Paolys ne voit ni ne stocke ton numéro de carte).",
+          "Numéro de téléphone si tu utilises la connexion par SMS.",
+        ],
+      },
+      {
+        titre: "2. Pourquoi on les utilise",
+        texte:
+          "Pour faire fonctionner le service (matching, messagerie), sécuriser la plateforme (vérification de profil, lutte contre les faux comptes), traiter tes paiements d'abonnement, et t'envoyer des notifications liées à ton compte.",
+      },
+      {
+        titre: "3. Avec qui on les partage",
+        texte: "Tes données sont partagées uniquement avec les prestataires nécessaires au fonctionnement du Service :",
+        items: [
+          "Supabase — hébergement de la base de données et des photos.",
+          "CinetPay — traitement des paiements mobile money et carte.",
+          "Twilio — envoi des codes de connexion par SMS.",
+          "AWS Rekognition — détection automatique d'un visage net sur les selfies de vérification (aucune reconnaissance faciale d'identité, juste un contrôle qualité).",
+        ],
+        texteApres: "Nous ne vendons jamais tes données à des tiers à des fins publicitaires.",
+      },
+      {
+        titre: "4. Visibilité de tes informations",
+        texte:
+          "Ton prénom, âge, ville, bio, prompts et photos sont visibles par les autres membres dans la découverte. Tes messages ne sont visibles que par toi et la personne avec qui tu discutes. Ton numéro de téléphone et tes informations de paiement ne sont jamais partagés avec d'autres membres.",
+      },
+      {
+        titre: "5. Tes droits",
+        texte:
+          "Tu peux à tout moment consulter, modifier ou supprimer les informations de ton profil directement dans l'application. Tu peux demander la suppression complète de ton compte et de tes données en nous contactant ; nous y donnons suite dans un délai raisonnable, sauf obligation légale de conservation (ex. données de facturation).",
+      },
+      {
+        titre: "6. Sécurité",
+        texte:
+          "Les photos de profil sont stockées de façon privée et accessibles uniquement via des liens temporaires signés. Les mots de passe ne sont jamais stockés en clair. L'accès aux données est protégé par des règles de sécurité au niveau de la base de données.",
+      },
+      {
+        titre: "7. Conservation",
+        texte:
+          "Tes données sont conservées tant que ton compte est actif. En cas de suppression de compte, tes informations de profil et photos sont supprimées ; certaines données (historique de paiement) peuvent être conservées plus longtemps si la loi l'exige.",
+      },
+      {
+        titre: "8. Contact",
+        texte:
+          "Pour toute question sur cette politique ou pour exercer tes droits, contacte-nous à l'adresse indiquée dans l'application.",
+      },
+    ],
+  },
+  mentionsLegales: {
+    titre: "Mentions légales",
+    editeurTitre: "Éditeur du site",
+    editeurAvertissement:
+      "⚠️ À compléter : nom de l'entité ou de l'auto-entrepreneur exploitant Paolys, forme juridique, adresse du siège, numéro d'immatriculation (RCCM) si applicable, et coordonnées de contact du responsable de la publication.",
+    hebergementTitre: "Hébergement",
+    hebergementTexte:
+      "L'application est hébergée par Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, États-Unis) et sa base de données par Supabase Inc.",
+    proprieteTitre: "Propriété intellectuelle",
+    proprieteTexte:
+      "Le nom « Paolys », son logo et son identité visuelle sont la propriété de l'éditeur. Toute reproduction sans autorisation est interdite.",
+    contactTitre: "Contact",
+    contactTexte: "Pour toute question, consulte la page",
+    contactLien: "Contact",
+  },
+  contact: {
+    titre: "Contact",
+    intro: "Une question, un problème, un signalement ? Écris-nous, nous te répondrons dès que possible.",
+    emailTitre: "Par e-mail",
+    emailAvertissement: "⚠️ À compléter : adresse e-mail de support à afficher ici (ex. contact@paolys.app).",
+    signalerTitre: "Signaler un profil ou un abus",
+    signalerTexte:
+      "Si tu rencontres un comportement inapproprié sur l'application, utilise en priorité le bouton de signalement présent sur les profils et conversations concernés — cela nous permet d'agir plus vite.",
+  },
   home: {
     kicker: "Il était une fois",
     tagline: "Derrière chaque profil, une vraie personne, pour des amitiés et rencontres sincères",
@@ -406,6 +544,142 @@ const en: Dictionary = {
     confidentialite: "Privacy",
     mentionsLegales: "Legal notice",
     contact: "Contact",
+  },
+  cgu: {
+    titre: "Terms of Service",
+    miseAJour: "Last updated: September 2026",
+    sections: [
+      {
+        titre: "1. Purpose and acceptance",
+        texte:
+          "These Terms of Service (\"Terms\") govern access to and use of the Paolys application (\"the Service\"), published from Côte d'Ivoire. By creating an account, you accept these Terms without reservation, as well as the Privacy Policy.",
+      },
+      {
+        titre: "2. Minimum age",
+        texte:
+          "Paolys is strictly reserved for people aged 18 or older. By creating an account, you certify that you are at least 18. Any account whose declared age is found to be inaccurate or under 18 will be deleted without notice.",
+      },
+      {
+        titre: "3. Your account",
+        texte:
+          "You are responsible for the accuracy of the information you provide (name, age, photos) and for keeping your password confidential. Only one account per person is allowed. You agree to only post photos and information that genuinely represent you — fake profiles are prohibited and will result in account deletion.",
+      },
+      {
+        titre: "4. Expected behaviour",
+        texte:
+          "It is forbidden to use Paolys to: harass or threaten another member, post hateful, illegal or pornographic content, impersonate someone else, solicit money from other members (scams), or use the Service for unauthorised commercial purposes. Every report is reviewed by moderation; an account may be suspended or deleted in case of a breach.",
+      },
+      {
+        titre: "5. Profile verification",
+        texte:
+          "Paolys offers an optional selfie verification, compared to profile photos, to earn a \"Verified profile\" badge. This verification does not guarantee a member's full identity; it only aims to confirm that the photos match a real person.",
+      },
+      {
+        titre: "6. Paolys+ subscription and payment",
+        texte:
+          "The core of the Service (swipes, matches, messages) is and will remain free. The optional paid \"Paolys+\" subscription unlocks convenience features (see who liked you, advanced filters, visibility boost). Payments are processed by our provider CinetPay (Orange Money, MTN Money, Wave, Moov Money, card); Paolys never stores your card details. Amounts and durations are shown before any payment. Except in case of a technical error on our part, subscriptions are non-refundable once activated.",
+      },
+      {
+        titre: "7. Suspension and termination",
+        texte:
+          "You can delete your account at any time by contacting us. Paolys reserves the right to suspend or delete an account in case of a breach of these Terms, without any obligation to refund amounts already paid.",
+      },
+      {
+        titre: "8. Liability",
+        texte:
+          "Paolys connects people but cannot guarantee the accuracy of information provided by members, nor the safety of meetings arranged outside the application. We encourage you to stay cautious: favour a first date in a public place and let someone close to you know your plans (the application offers a dedicated tool for this).",
+      },
+      {
+        titre: "9. Governing law",
+        texte:
+          "These Terms are governed by the law of Côte d'Ivoire. Any dispute falls under the jurisdiction of the competent courts of Côte d'Ivoire.",
+      },
+      {
+        titre: "10. Contact",
+        texte: "For any question about these Terms, contact us at the address shown in the application.",
+      },
+    ],
+  },
+  confidentialite: {
+    titre: "Privacy Policy",
+    miseAJour: "Last updated: September 2026",
+    sections: [
+      {
+        titre: "1. Data we collect",
+        items: [
+          "Profile information: first name, date of birth, gender, city, bio, photos, prompts.",
+          "Geographic location (optional), used to show you nearby profiles.",
+          "Content of messages exchanged with your matches.",
+          "Verification selfie (if you use this feature), analysed automatically then kept for moderation purposes.",
+          "Payment information for a Paolys+ subscription (processed by CinetPay — Paolys never sees or stores your card number).",
+          "Phone number if you use SMS sign-in.",
+        ],
+      },
+      {
+        titre: "2. Why we use it",
+        texte:
+          "To operate the service (matching, messaging), secure the platform (profile verification, fighting fake accounts), process your subscription payments, and send you account-related notifications.",
+      },
+      {
+        titre: "3. Who we share it with",
+        texte: "Your data is only shared with the providers necessary to operate the Service:",
+        items: [
+          "Supabase — database and photo hosting.",
+          "CinetPay — mobile money and card payment processing.",
+          "Twilio — sending SMS sign-in codes.",
+          "AWS Rekognition — automatic detection of a clear face on verification selfies (no facial identity recognition, just a quality check).",
+        ],
+        texteApres: "We never sell your data to third parties for advertising purposes.",
+      },
+      {
+        titre: "4. Visibility of your information",
+        texte:
+          "Your first name, age, city, bio, prompts and photos are visible to other members in discovery. Your messages are only visible to you and the person you're chatting with. Your phone number and payment information are never shared with other members.",
+      },
+      {
+        titre: "5. Your rights",
+        texte:
+          "You can view, edit or delete your profile information at any time directly in the application. You can request full deletion of your account and data by contacting us; we will act on it within a reasonable time, except where the law requires us to retain certain data (e.g. billing records).",
+      },
+      {
+        titre: "6. Security",
+        texte:
+          "Profile photos are stored privately and are only accessible via temporary signed links. Passwords are never stored in plain text. Access to data is protected by security rules at the database level.",
+      },
+      {
+        titre: "7. Retention",
+        texte:
+          "Your data is kept as long as your account is active. If you delete your account, your profile information and photos are deleted; some data (payment history) may be kept longer if required by law.",
+      },
+      {
+        titre: "8. Contact",
+        texte: "For any question about this policy or to exercise your rights, contact us at the address shown in the application.",
+      },
+    ],
+  },
+  mentionsLegales: {
+    titre: "Legal Notice",
+    editeurTitre: "Publisher",
+    editeurAvertissement:
+      "⚠️ To be completed: name of the entity or sole proprietor operating Paolys, legal form, registered address, business registration number (RCCM) if applicable, and contact details of the publication manager.",
+    hebergementTitre: "Hosting",
+    hebergementTexte:
+      "The application is hosted by Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, USA) and its database by Supabase Inc.",
+    proprieteTitre: "Intellectual property",
+    proprieteTexte:
+      "The name \"Paolys\", its logo and visual identity are the property of the publisher. Any reproduction without authorisation is prohibited.",
+    contactTitre: "Contact",
+    contactTexte: "For any question, see the",
+    contactLien: "Contact",
+  },
+  contact: {
+    titre: "Contact",
+    intro: "A question, a problem, something to report? Write to us, we'll get back to you as soon as possible.",
+    emailTitre: "By email",
+    emailAvertissement: "⚠️ To be completed: support email address to display here (e.g. contact@paolys.app).",
+    signalerTitre: "Report a profile or abuse",
+    signalerTexte:
+      "If you encounter inappropriate behaviour on the application, use the report button on the profiles and conversations concerned as a priority — this helps us act faster.",
   },
   home: {
     kicker: "Once upon a time",
