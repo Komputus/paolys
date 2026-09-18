@@ -23,6 +23,7 @@ export function BottomNav({
     { href: "/decouverte", label: d.nav.rencontres, icon: IconRencontres },
     { href: "/aimes-par", label: d.nav.likes, icon: IconLikes, badge: compteLikes },
     { href: "/messages", label: d.nav.discussions, icon: IconDiscussions },
+    { href: "/premium", label: d.nav.premium, icon: IconPremium },
     { href: "/profil", label: d.nav.profil, icon: IconProfil },
   ];
 
@@ -107,6 +108,14 @@ function IconDiscussions() {
         strokeWidth="2"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+function IconPremium() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z" />
     </svg>
   );
 }

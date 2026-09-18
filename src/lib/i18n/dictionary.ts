@@ -18,6 +18,7 @@ const fr = {
     likes: "Likes",
     discussions: "Discussions",
     profil: "Profil",
+    premium: "Paolys+",
   },
   commun: {
     copier: "Copier",
@@ -380,13 +381,52 @@ const fr = {
     edition: "Édition Sensation",
     texteIntro:
       "Tout ce qui fait Paolys reste gratuit — swipes, matchs et messages illimités. Paolys+ ajoute juste un peu plus de confort.",
-    avantages: [
-      "Voir qui t'a déjà aimé avant de swiper toi-même",
-      "Filtres avancés (tranche d'âge, profils vérifiés uniquement)",
-      "Annuler un swipe (rattraper un « passer » accidentel)",
-      "Boost de visibilité pendant 24h",
-      "Mode discret : navigue sans apparaître dans la découverte des autres",
+    fonctionnalitesTitre: "Ce que Paolys+ ajoute",
+    fonctionnalites: [
+      {
+        titre: "Voir qui vous a aimé·e",
+        texte: "La liste des profils qui ont déjà liké le tien, avant même que tu swipes.",
+      },
+      {
+        titre: "Coup de cœur",
+        texte: "Mets un like en avant : la personne est notifiée immédiatement.",
+      },
+      {
+        titre: "Boost de visibilité",
+        texte: "Passe en tête des profils vus pendant 30 minutes.",
+      },
+      {
+        titre: "Retour en arrière",
+        texte: "Annule un swipe « passer » accidentel.",
+      },
+      {
+        titre: "Mode discret",
+        texte: "Parcours sans apparaître dans la découverte des autres, sauf si tu likes en premier.",
+      },
+      {
+        titre: "Filtres avancés",
+        texte: "Intention (sérieux, discussion, amitié), profils vérifiés uniquement, tranche d'âge fine.",
+      },
     ],
+    gratuitTitre: "Toujours gratuit, pour tout le monde",
+    gratuitTexte: "Paolys+ ajoute du confort, jamais au détriment de ce qui a toujours été promis gratuit :",
+    gratuitItems: [
+      "Swipes, matchs et messages illimités",
+      "Vérification de profil par photo",
+      "Signalement et blocage",
+    ],
+    formuleTitre: "Choisis ta formule",
+    formuleSemaineNom: "Hebdomadaire",
+    formuleMoisNom: "Mensuel",
+    badgePopulaire: "Populaire",
+    parSemaine: "/ semaine",
+    parMois: "/ mois",
+    moyenPaiementTitre: "Moyen de paiement",
+    mobileMoney: "Mobile Money",
+    mobileMoneyDetail: "Orange Money, MTN Mobile Money, Wave",
+    carteBancaire: "Carte bancaire",
+    carteBancaireDetail: "Visa, Mastercard",
+    sAbonner: (montant: number) => `S'abonner — ${montant} FCFA`,
     abonnementActif: (date: string) => `Abonnement actif jusqu'au ${date}`,
     abonnerMois: (montant: number) => `S'abonner 1 mois — ${montant} FCFA`,
     abonnerSemaine: (montant: number) => `S'abonner 1 semaine — ${montant} FCFA`,
@@ -534,6 +574,7 @@ const en: Dictionary = {
     likes: "Likes",
     discussions: "Chats",
     profil: "Profile",
+    premium: "Paolys+",
   },
   commun: {
     copier: "Copy",
@@ -892,13 +933,52 @@ const en: Dictionary = {
     edition: "Sensation Edition",
     texteIntro:
       "Everything that makes Paolys great stays free — unlimited swipes, matches, and messages. Paolys+ just adds a bit more comfort.",
-    avantages: [
-      "See who already liked you before you swipe yourself",
-      "Advanced filters (age range, verified profiles only)",
-      "Undo a swipe (recover from an accidental pass)",
-      "24h visibility boost",
-      "Discreet mode: browse without appearing in others' discovery",
+    fonctionnalitesTitre: "What Paolys+ adds",
+    fonctionnalites: [
+      {
+        titre: "See who liked you",
+        texte: "The list of profiles who already liked you, before you even swipe.",
+      },
+      {
+        titre: "Super Like",
+        texte: "Put a like front and centre: the person is notified immediately.",
+      },
+      {
+        titre: "Visibility boost",
+        texte: "Jump to the front of the profiles seen for 30 minutes.",
+      },
+      {
+        titre: "Undo",
+        texte: "Undo an accidental \"pass\" swipe.",
+      },
+      {
+        titre: "Discreet mode",
+        texte: "Browse without appearing in others' discovery, unless you like first.",
+      },
+      {
+        titre: "Advanced filters",
+        texte: "Intent (serious, casual, friendship), verified profiles only, fine age range.",
+      },
     ],
+    gratuitTitre: "Always free, for everyone",
+    gratuitTexte: "Paolys+ adds comfort, never at the expense of what was always promised free:",
+    gratuitItems: [
+      "Unlimited swipes, matches and messages",
+      "Photo profile verification",
+      "Reporting and blocking",
+    ],
+    formuleTitre: "Choose your plan",
+    formuleSemaineNom: "Weekly",
+    formuleMoisNom: "Monthly",
+    badgePopulaire: "Popular",
+    parSemaine: "/ week",
+    parMois: "/ month",
+    moyenPaiementTitre: "Payment method",
+    mobileMoney: "Mobile Money",
+    mobileMoneyDetail: "Orange Money, MTN Mobile Money, Wave",
+    carteBancaire: "Card",
+    carteBancaireDetail: "Visa, Mastercard",
+    sAbonner: (montant: number) => `Subscribe — ${montant} FCFA`,
     abonnementActif: (date: string) => `Subscription active until ${date}`,
     abonnerMois: (montant: number) => `Subscribe for 1 month — ${montant} FCFA`,
     abonnerSemaine: (montant: number) => `Subscribe for 1 week — ${montant} FCFA`,

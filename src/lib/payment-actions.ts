@@ -5,7 +5,12 @@ import { createClient } from "@/lib/supabase/server";
 import { initierPaiement } from "@/lib/cinetpay";
 import { FORMULES, type Formule } from "@/lib/premium-pricing";
 
-export async function demarrerAbonnement(formule: Formule) {
+export async function demarrerAbonnement(formData: FormData) {
+  const formuleDemandee = String(formData.get("formule") ?? "mois");
+  const formule: Formule = formuleDemandee === "semaine" ? "semaine" : "mois";
+  const canal = String(formData.get("canal") ?? "mobile_money");
+  const channels = canal === "carte" ? "CREDIT_CARD" : "MOBILE_MONEY";
+
   const { montantFcfa, dureeJours, libelle } = FORMULES[formule];
 
   const supabase = await createClient();
@@ -39,6 +44,7 @@ export async function demarrerAbonnement(formule: Formule) {
     notifyUrl: `${siteUrl}/api/paiement/notifier`,
     returnUrl: `${siteUrl}/paiement/retour?transaction=${transactionId}`,
     metadata: user.id,
+    channels,
   });
 
   if (reponse.code !== "201" || !reponse.data?.payment_url) {

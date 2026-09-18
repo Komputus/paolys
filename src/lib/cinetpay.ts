@@ -24,6 +24,7 @@ export async function initierPaiement(params: {
   notifyUrl: string;
   returnUrl: string;
   metadata: string;
+  channels?: "ALL" | "MOBILE_MONEY" | "CREDIT_CARD";
 }): Promise<ReponseInitiation> {
   const reponse = await fetch(`${CINETPAY_BASE}/payment`, {
     method: "POST",
@@ -37,7 +38,7 @@ export async function initierPaiement(params: {
       description: params.description,
       notify_url: params.notifyUrl,
       return_url: params.returnUrl,
-      channels: "ALL",
+      channels: params.channels ?? "ALL",
       metadata: params.metadata,
     }),
   });
