@@ -1,18 +1,25 @@
 import { RekognitionClient, DetectFacesCommand } from "@aws-sdk/client-rekognition";
 
-const client = new RekognitionClient({
-  region: process.env.AWS_REGION,
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
-  },
-});
+// Cree paresseusement (pas au chargement du module) : sinon Next.js evalue le
+// constructeur pendant `next build` (collecte des donnees de page), qui
+// echoue si les variables AWS_* ne sont pas encore configurees sur la
+// plateforme de deploiement.
+function creerClient() {
+  return new RekognitionClient({
+    region: process.env.AWS_REGION,
+    credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
+    },
+  });
+}
 
 export type ResultatFaceCheck =
   | { ok: true }
   | { ok: false; raison: string };
 
 export async function verifierUnVisageNet(bytes: Uint8Array): Promise<ResultatFaceCheck> {
+  const client = creerClient();
   const reponse = await client.send(
     new DetectFacesCommand({
       Image: { Bytes: bytes },
