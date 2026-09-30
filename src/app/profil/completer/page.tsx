@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { enregistrerProfil } from "@/lib/profile-actions";
 import { LocalisationInput } from "@/components/LocalisationInput";
 import { FileInputWarm } from "@/components/FileInputWarm";
+import { DateNaissanceInput } from "@/components/DateNaissanceInput";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { BoutonProfil } from "@/components/BoutonProfil";
@@ -63,13 +64,9 @@ export default async function CompleterProfilPage({
             <label htmlFor="birthDate" className="text-sm font-medium">
               {d.profilCompleter.dateNaissance}
             </label>
-            <input
-              id="birthDate"
-              name="birthDate"
-              type="date"
-              required
-              className="field-warm mt-1"
-            />
+            <div className="mt-1">
+              <DateNaissanceInput name="birthDate" />
+            </div>
           </div>
           <div>
             <label htmlFor="gender" className="text-sm font-medium">
@@ -121,6 +118,41 @@ export default async function CompleterProfilPage({
               required
               className="field-warm mt-1"
             />
+          </div>
+          <div>
+            <label htmlFor="situationMatrimoniale" className="text-sm font-medium">
+              {d.profilCompleter.situationMatrimoniale}
+            </label>
+            <select
+              id="situationMatrimoniale"
+              name="situationMatrimoniale"
+              defaultValue=""
+              className="field-warm mt-1"
+            >
+              <option value="">{d.profilCompleter.optionPeuImporte}</option>
+              <option value="celibataire">{d.profilCompleter.situationCelibataire}</option>
+              <option value="divorce">{d.profilCompleter.situationDivorce}</option>
+              <option value="veuf">{d.profilCompleter.situationVeuf}</option>
+              <option value="separe">{d.profilCompleter.situationSepare}</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="nombreEnfants" className="text-sm font-medium">
+              {d.profilCompleter.nombreEnfants}
+            </label>
+            <select
+              id="nombreEnfants"
+              name="nombreEnfants"
+              defaultValue=""
+              className="field-warm mt-1"
+            >
+              <option value="">{d.profilCompleter.optionPeuImporte}</option>
+              <option value="0">{d.profilCompleter.enfants0}</option>
+              <option value="1">{d.profilCompleter.enfants1}</option>
+              <option value="2">{d.profilCompleter.enfants2}</option>
+              <option value="3">{d.profilCompleter.enfants3}</option>
+              <option value="4+">{d.profilCompleter.enfants4Plus}</option>
+            </select>
           </div>
           <div>
             <label htmlFor="bio" className="text-sm font-medium">

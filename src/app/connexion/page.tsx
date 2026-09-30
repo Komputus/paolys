@@ -4,6 +4,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { Footer } from "@/components/Footer";
 import { BoutonGoogle } from "@/components/BoutonGoogle";
+import { ChampMotDePasse } from "@/components/ChampMotDePasse";
 import { BoutonProfil } from "@/components/BoutonProfil";
 import { createClient } from "@/lib/supabase/server";
 import { getLocale } from "@/lib/i18n/locale";
@@ -62,13 +63,7 @@ export default async function ConnexionPage({
                 {d.auth.motDePasseOublie}
               </Link>
             </div>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              required
-              className="field-warm mt-1"
-            />
+            <ChampMotDePasse id="password" name="password" required autoComplete="current-password" />
           </div>
           <button type="submit" className="btn-primary-warm mt-2">
             {d.auth.seConnecter}

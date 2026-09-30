@@ -7,6 +7,7 @@ import { getDictionary } from "@/lib/i18n/dictionary";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { BoutonProfil } from "@/components/BoutonProfil";
+import { DateNaissanceInput } from "@/components/DateNaissanceInput";
 
 const CHAMPS_VALIDES = [
   "displayName",
@@ -15,6 +16,8 @@ const CHAMPS_VALIDES = [
   "lookingFor",
   "city",
   "bio",
+  "situationMatrimoniale",
+  "nombreEnfants",
 ] as const;
 type Champ = (typeof CHAMPS_VALIDES)[number];
 
@@ -25,6 +28,8 @@ const COLONNE_PAR_CHAMP: Record<Champ, string> = {
   lookingFor: "looking_for",
   city: "city",
   bio: "bio",
+  situationMatrimoniale: "situation_matrimoniale",
+  nombreEnfants: "nombre_enfants",
 };
 
 export default async function ModifierChampPage({
@@ -119,15 +124,7 @@ function ChampInput({
         />
       );
     case "birthDate":
-      return (
-        <input
-          name="valeur"
-          type="date"
-          required
-          defaultValue={valeurActuelle}
-          className="field-warm"
-        />
-      );
+      return <DateNaissanceInput name="valeur" defaultValue={valeurActuelle} />;
     case "gender":
       return (
         <select name="valeur" required defaultValue={valeurActuelle} className="field-warm">
@@ -167,6 +164,27 @@ function ChampInput({
           className="field-warm"
           autoFocus
         />
+      );
+    case "situationMatrimoniale":
+      return (
+        <select name="valeur" defaultValue={valeurActuelle} className="field-warm">
+          <option value="">{d.profilCompleter.optionPeuImporte}</option>
+          <option value="celibataire">{d.profilCompleter.situationCelibataire}</option>
+          <option value="divorce">{d.profilCompleter.situationDivorce}</option>
+          <option value="veuf">{d.profilCompleter.situationVeuf}</option>
+          <option value="separe">{d.profilCompleter.situationSepare}</option>
+        </select>
+      );
+    case "nombreEnfants":
+      return (
+        <select name="valeur" defaultValue={valeurActuelle} className="field-warm">
+          <option value="">{d.profilCompleter.optionPeuImporte}</option>
+          <option value="0">{d.profilCompleter.enfants0}</option>
+          <option value="1">{d.profilCompleter.enfants1}</option>
+          <option value="2">{d.profilCompleter.enfants2}</option>
+          <option value="3">{d.profilCompleter.enfants3}</option>
+          <option value="4+">{d.profilCompleter.enfants4Plus}</option>
+        </select>
       );
   }
 }

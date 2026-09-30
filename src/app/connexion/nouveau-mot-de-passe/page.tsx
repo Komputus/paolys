@@ -16,6 +16,7 @@ export default function NouveauMotDePassePage() {
 
   const [pret, setPret] = useState(false);
   const [motDePasse, setMotDePasse] = useState("");
+  const [motDePasseVisible, setMotDePasseVisible] = useState(false);
   const [enCours, setEnCours] = useState(false);
   const [erreur, setErreur] = useState<string | null>(null);
   const [succes, setSucces] = useState(false);
@@ -85,15 +86,36 @@ export default function NouveauMotDePassePage() {
                 <label htmlFor="motDePasse" className="text-sm font-medium">
                   {d.nouveauMotDePasse.label}
                 </label>
-                <input
-                  id="motDePasse"
-                  type="password"
-                  required
-                  minLength={6}
-                  value={motDePasse}
-                  onChange={(e) => setMotDePasse(e.target.value)}
-                  className="field-warm mt-1"
-                />
+                <div className="relative">
+                  <input
+                    id="motDePasse"
+                    type={motDePasseVisible ? "text" : "password"}
+                    required
+                    minLength={6}
+                    value={motDePasse}
+                    onChange={(e) => setMotDePasse(e.target.value)}
+                    className="field-warm mt-1 pr-10"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setMotDePasseVisible((v) => !v)}
+                    aria-label={motDePasseVisible ? "Masquer le mot de passe" : "Afficher le mot de passe"}
+                    className="absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-foreground/50 transition-colors hover:bg-black/5"
+                  >
+                    {motDePasseVisible ? (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+                        <path d="M3 21L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                    ) : (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
               </div>
               {erreur && <p className="text-sm text-red-600">{erreur}</p>}
               <button type="submit" disabled={enCours} className="btn-primary-warm mt-2 disabled:opacity-50">
