@@ -78,7 +78,9 @@ as $$
   limit limite;
 $$;
 
-create or replace function public.profil_pour_affichage(p_id uuid)
+drop function if exists public.profil_pour_affichage(uuid);
+
+create function public.profil_pour_affichage(p_id uuid)
 returns table (
   display_name text,
   birth_date date,
