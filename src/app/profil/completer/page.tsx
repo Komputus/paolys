@@ -3,9 +3,9 @@ import { createClient } from "@/lib/supabase/server";
 import { enregistrerProfil } from "@/lib/profile-actions";
 import { LocalisationInput } from "@/components/LocalisationInput";
 import { FileInputWarm } from "@/components/FileInputWarm";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 
@@ -29,8 +29,8 @@ export default async function CompleterProfilPage({
     <div className="page-bg flex flex-1 flex-col overflow-y-auto">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte />
       </div>
       <div className="flex flex-col items-center px-6 pb-12">
       <div className="card-warm mt-4 w-full max-w-sm p-8">

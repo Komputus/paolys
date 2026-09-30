@@ -2,9 +2,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { enregistrerPrompts } from "@/lib/prompt-actions";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 
@@ -35,8 +35,8 @@ export default async function PromptsPage({
     <div className="page-bg flex flex-1 flex-col overflow-y-auto">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte />
       </div>
       <div className="flex flex-1 justify-center px-6 pb-12 pt-4">
       <div className="card-warm w-full max-w-sm p-8">

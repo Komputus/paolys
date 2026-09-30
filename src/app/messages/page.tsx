@@ -6,8 +6,9 @@ import { ProtectedImage } from "@/components/ProtectedImage";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 import { BottomNav } from "@/components/BottomNav";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
+import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 
 type MatchApercu = {
   match_id: string;
@@ -50,13 +51,14 @@ export default async function MessagesPage() {
 
   return (
     <div className="page-bg flex h-dvh flex-col overflow-hidden">
-      <header className="flex shrink-0 items-center justify-between px-6 py-4">
+      <header className="relative flex shrink-0 items-center justify-between px-6 py-4">
+        <EnTeteLogo />
         <Link href="/profil" className="link-warm text-sm">
           {d.nav.monProfil}
         </Link>
         <div className="flex items-center gap-2">
-          <BoutonAccueil />
           <LanguageSwitcher locale={locale} />
+          <BoutonProfil connecte />
         </div>
       </header>
 

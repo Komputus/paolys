@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { Footer } from "@/components/Footer";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
+import { createClient } from "@/lib/supabase/server";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 
@@ -13,17 +13,18 @@ import { getDictionary } from "@/lib/i18n/dictionary";
 export default async function ConfidentialitePage() {
   const locale = await getLocale();
   const d = getDictionary(locale);
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
   return (
     <div className="page-bg flex flex-1 flex-col overflow-y-auto">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte={Boolean(user)} />
       </div>
       <div className="mx-auto w-full max-w-2xl px-6 pb-16 pt-4">
-        <Link href="/" className="link-warm text-sm">
-          {d.nav.accueil}
-        </Link>
         <h1 className="font-display mt-4 text-3xl text-brand">{d.confidentialite.titre}</h1>
         <p className="mt-2 text-sm text-foreground/50">{d.confidentialite.miseAJour}</p>
 

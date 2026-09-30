@@ -4,9 +4,9 @@ import { createClient } from "@/lib/supabase/server";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 import { BottomNav } from "@/components/BottomNav";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 
 export default async function ModifierProfilPage() {
   const locale = await getLocale();
@@ -100,8 +100,8 @@ export default async function ModifierProfilPage() {
     <div className="page-bg flex h-dvh flex-col overflow-hidden">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-4 pt-4 sm:px-6">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte />
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-8 sm:px-6">
       <div className="mx-auto flex w-full max-w-lg flex-col gap-6">

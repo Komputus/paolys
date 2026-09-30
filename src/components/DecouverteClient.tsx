@@ -8,8 +8,9 @@ import { SignalerBloquer } from "@/components/SignalerBloquer";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { HeroArt } from "@/components/HeroArt";
 import { BottomNav } from "@/components/BottomNav";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
+import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 import { getDictionary, type Locale } from "@/lib/i18n/dictionary";
 
 export type Candidat = {
@@ -147,7 +148,8 @@ export function DecouverteClient({
 
   return (
     <div className="page-bg flex h-dvh flex-col overflow-hidden">
-      <header className="flex shrink-0 items-center justify-between px-6 py-4">
+      <header className="relative flex shrink-0 items-center justify-between px-6 py-4">
+        <EnTeteLogo />
         <Link href="/profil" className="link-warm text-sm">
           {d.nav.monProfil}
         </Link>
@@ -160,8 +162,8 @@ export function DecouverteClient({
               {d.decouverte.filtres}
             </button>
           )}
-          <BoutonAccueil />
           <LanguageSwitcher locale={locale} />
+          <BoutonProfil connecte />
         </div>
       </header>
 

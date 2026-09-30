@@ -4,9 +4,9 @@ import { createClient } from "@/lib/supabase/server";
 import { mettreAJourChamp } from "@/lib/profile-actions";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 
 const CHAMPS_VALIDES = [
   "displayName",
@@ -66,8 +66,8 @@ export default async function ModifierChampPage({
     <div className="page-bg min-h-dvh">
       <div className="relative flex h-7 box-content items-center justify-end gap-2 px-4 pt-4 sm:px-6">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte />
       </div>
       <div className="px-4 pb-8 sm:px-6">
       <div className="mx-auto flex w-full max-w-lg flex-col gap-6">

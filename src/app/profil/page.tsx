@@ -9,9 +9,9 @@ import { CopierLien } from "@/components/CopierLien";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary, localeVersDateFnsTag } from "@/lib/i18n/dictionary";
 import { BottomNav } from "@/components/BottomNav";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 
 type MonPrompt = { pos: number; prompt_key: string; reponse: string };
 
@@ -65,8 +65,8 @@ export default async function ProfilPage() {
     <div className="page-bg flex h-dvh flex-col overflow-hidden">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte />
       </div>
       <div className="flex min-h-0 flex-1 justify-center overflow-y-auto px-6 pb-12 pt-4">
       <div className="card-warm w-full max-w-sm p-8 text-center">

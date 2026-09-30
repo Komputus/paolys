@@ -1,11 +1,10 @@
-import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary, localeVersDateFnsTag } from "@/lib/i18n/dictionary";
 import { Wordmark } from "@/components/brand/Wordmark";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 import { Footer } from "@/components/Footer";
 import { PremiumCheckout } from "@/components/PremiumCheckout";
 
@@ -49,15 +48,11 @@ export default async function PremiumPage({
     <div className="page-bg flex flex-1 flex-col overflow-y-auto">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte={Boolean(user)} />
       </div>
 
       <div className="mx-auto w-full max-w-md px-6 pb-16 pt-4">
-        <Link href={user ? "/profil" : "/"} className="link-warm text-sm">
-          {user ? d.nav.monProfil : d.nav.accueil}
-        </Link>
-
         {/* En-tete */}
         <div className="card-warm mt-4 p-8 text-center">
           <span className="block text-sm font-medium tracking-[0.3em] text-gold uppercase">

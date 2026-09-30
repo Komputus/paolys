@@ -9,8 +9,8 @@ import { SignalerBloquer } from "@/components/SignalerBloquer";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { RendezVousPlanner } from "@/components/RendezVousPlanner";
 import { DemandeRendezVous, type DemandeRdv } from "@/components/DemandeRendezVous";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 import { getDictionary, type Locale } from "@/lib/i18n/dictionary";
 
 export type Message = {
@@ -144,8 +144,8 @@ export function ConversationClient({
             onBloque={() => router.push("/messages")}
             locale={locale}
           />
-          <BoutonAccueil />
           <LanguageSwitcher locale={locale} />
+          <BoutonProfil connecte />
         </div>
       </header>
 

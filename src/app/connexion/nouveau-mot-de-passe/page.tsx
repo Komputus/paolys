@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { getDictionary, type Locale } from "@/lib/i18n/dictionary";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 
 export default function NouveauMotDePassePage() {
   // Pas de layout serveur ici (page client autonome, atteinte via le lien
@@ -59,7 +58,6 @@ export default function NouveauMotDePassePage() {
     <div className="page-bg flex flex-1 flex-col overflow-y-auto">
       <div className="relative flex h-7 box-content shrink-0 items-center justify-end gap-2 px-6 pt-4">
         <EnTeteLogo />
-        <BoutonAccueil />
       </div>
       <div className="flex flex-col items-center px-6 pb-8">
         <div className="card-warm mt-10 w-full max-w-sm p-8">

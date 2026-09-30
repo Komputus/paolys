@@ -4,9 +4,9 @@ import { createClient } from "@/lib/supabase/server";
 import { marquerSignalementTraite } from "@/lib/moderation-actions";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
-import { BoutonAccueil } from "@/components/BoutonAccueil";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 
 type Signalement = {
   id: string;
@@ -54,8 +54,8 @@ export default async function AdminSignalementsPage() {
     <div className="page-bg flex flex-1 flex-col">
       <div className="relative flex h-7 box-content items-center justify-end gap-2 px-6 pt-6">
         <EnTeteLogo />
-        <BoutonAccueil />
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte />
       </div>
       <div className="flex flex-1 flex-col px-6 pb-12">
       <div className="mx-auto w-full max-w-2xl">

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroArt } from "@/components/HeroArt";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { BoutonProfil } from "@/components/BoutonProfil";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Footer } from "@/components/Footer";
 import { getLocale } from "@/lib/i18n/locale";
@@ -13,12 +14,16 @@ export default async function Home() {
   const d = getDictionary(locale);
 
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
   const { data: nbProfilsVerifies } = await supabase.rpc("combien_de_profils_verifies");
 
   return (
     <div className="page-bg flex flex-1 flex-col">
       <div className="relative flex h-7 box-content items-center justify-end px-6 pt-4">
         <LanguageSwitcher locale={locale} />
+        <BoutonProfil connecte={Boolean(user)} />
       </div>
 
       {/* Hero — pas de padding-top ici : le logo doit tomber exactement a la
@@ -36,18 +41,29 @@ export default async function Home() {
           {d.home.tagline}
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/inscription"
-            className="bg-mangue rounded-full px-8 py-3 font-medium text-white shadow-lg shadow-mangue/30 transition-transform hover:scale-105"
-          >
-            {d.home.creerCompte}
-          </Link>
-          <Link
-            href="/connexion"
-            className="rounded-full border border-brand/30 px-8 py-3 font-medium text-brand transition-colors hover:bg-brand-light"
-          >
-            {d.home.dejaCompte}
-          </Link>
+          {user ? (
+            <Link
+              href="/decouverte"
+              className="bg-mangue rounded-full px-8 py-3 font-medium text-white shadow-lg shadow-mangue/30 transition-transform hover:scale-105"
+            >
+              {d.profil.decouvrirProfils}
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/inscription"
+                className="bg-mangue rounded-full px-8 py-3 font-medium text-white shadow-lg shadow-mangue/30 transition-transform hover:scale-105"
+              >
+                {d.home.creerCompte}
+              </Link>
+              <Link
+                href="/connexion"
+                className="rounded-full border border-brand/30 px-8 py-3 font-medium text-brand transition-colors hover:bg-brand-light"
+              >
+                {d.home.dejaCompte}
+              </Link>
+            </>
+          )}
         </div>
         <Link href="/premium" className="mt-4 text-base font-bold text-lagune underline">
           {d.home.decouvrirPremium}
@@ -176,18 +192,29 @@ export default async function Home() {
           {d.home.ctaFinaleTitre}
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/inscription"
-            className="bg-mangue rounded-full px-8 py-3 font-medium text-white shadow-lg shadow-mangue/30 transition-transform hover:scale-105"
-          >
-            {d.home.creerCompte}
-          </Link>
-          <Link
-            href="/connexion"
-            className="rounded-full border border-brand/30 px-8 py-3 font-medium text-brand transition-colors hover:bg-brand-light"
-          >
-            {d.home.dejaCompte}
-          </Link>
+          {user ? (
+            <Link
+              href="/decouverte"
+              className="bg-mangue rounded-full px-8 py-3 font-medium text-white shadow-lg shadow-mangue/30 transition-transform hover:scale-105"
+            >
+              {d.profil.decouvrirProfils}
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/inscription"
+                className="bg-mangue rounded-full px-8 py-3 font-medium text-white shadow-lg shadow-mangue/30 transition-transform hover:scale-105"
+              >
+                {d.home.creerCompte}
+              </Link>
+              <Link
+                href="/connexion"
+                className="rounded-full border border-brand/30 px-8 py-3 font-medium text-brand transition-colors hover:bg-brand-light"
+              >
+                {d.home.dejaCompte}
+              </Link>
+            </>
+          )}
         </div>
       </section>
 
