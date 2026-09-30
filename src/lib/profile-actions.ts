@@ -24,6 +24,8 @@ export async function enregistrerProfil(formData: FormData) {
   const lookingFor = String(formData.get("lookingFor") ?? "");
   const city = String(formData.get("city") ?? "");
   const bio = String(formData.get("bio") ?? "");
+  const situationMatrimoniale = String(formData.get("situationMatrimoniale") ?? "") || null;
+  const nombreEnfants = String(formData.get("nombreEnfants") ?? "") || null;
   const photo = formData.get("photo") as File | null;
   const lat = formData.get("lat");
   const lng = formData.get("lng");
@@ -46,6 +48,8 @@ export async function enregistrerProfil(formData: FormData) {
     looking_for: lookingFor,
     city,
     bio,
+    situation_matrimoniale: situationMatrimoniale,
+    nombre_enfants: nombreEnfants,
     ...(location ? { location } : {}),
   });
 
@@ -96,6 +100,8 @@ const CHAMPS_MODIFIABLES = [
   "lookingFor",
   "city",
   "bio",
+  "situationMatrimoniale",
+  "nombreEnfants",
 ] as const;
 type ChampModifiable = (typeof CHAMPS_MODIFIABLES)[number];
 
@@ -106,6 +112,8 @@ const COLONNE_PAR_CHAMP: Record<ChampModifiable, string> = {
   lookingFor: "looking_for",
   city: "city",
   bio: "bio",
+  situationMatrimoniale: "situation_matrimoniale",
+  nombreEnfants: "nombre_enfants",
 };
 
 export async function mettreAJourChamp(formData: FormData) {
@@ -140,9 +148,10 @@ export async function mettreAJourChamp(formData: FormData) {
   }
 
   const colonne = COLONNE_PAR_CHAMP[champ as ChampModifiable];
+  const estFacultatif = champ === "situationMatrimoniale" || champ === "nombreEnfants";
   const { error } = await supabase
     .from("profiles")
-    .update({ [colonne]: valeur })
+    .update({ [colonne]: estFacultatif && !valeur ? null : valeur })
     .eq("id", user.id);
 
   if (error) {

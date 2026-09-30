@@ -23,7 +23,9 @@ export default async function ModifierProfilPage() {
 
   const { data: profil } = await supabase
     .from("profiles")
-    .select("display_name, birth_date, gender, looking_for, city, bio, photo_verified")
+    .select(
+      "display_name, birth_date, gender, looking_for, city, bio, photo_verified, situation_matrimoniale, nombre_enfants",
+    )
     .eq("id", user.id)
     .maybeSingle();
 
@@ -51,6 +53,19 @@ export default async function ModifierProfilPage() {
     homme: d.profilCompleter.desHommes,
     femme: d.profilCompleter.desFemmes,
     tous: d.profilCompleter.toutLeMonde,
+  };
+  const valeurSituation: Record<string, string> = {
+    celibataire: d.profilCompleter.situationCelibataire,
+    divorce: d.profilCompleter.situationDivorce,
+    veuf: d.profilCompleter.situationVeuf,
+    separe: d.profilCompleter.situationSepare,
+  };
+  const valeurEnfants: Record<string, string> = {
+    "0": d.profilCompleter.enfants0,
+    "1": d.profilCompleter.enfants1,
+    "2": d.profilCompleter.enfants2,
+    "3": d.profilCompleter.enfants3,
+    "4+": d.profilCompleter.enfants4Plus,
   };
 
   const lignes: { champ: string; label: string; valeur: string; icone: React.ReactNode }[] = [
@@ -93,6 +108,18 @@ export default async function ModifierProfilPage() {
       label: d.profilModifier.champs.bio,
       valeur: profil.bio || d.profilModifier.nonRenseigne,
       icone: <IconTexte />,
+    },
+    {
+      champ: "situationMatrimoniale",
+      label: d.profilModifier.champs.situationMatrimoniale,
+      valeur: valeurSituation[profil.situation_matrimoniale ?? ""] ?? d.profilModifier.nonRenseigne,
+      icone: <IconCoeur />,
+    },
+    {
+      champ: "nombreEnfants",
+      label: d.profilModifier.champs.nombreEnfants,
+      valeur: valeurEnfants[profil.nombre_enfants ?? ""] ?? d.profilModifier.nonRenseigne,
+      icone: <IconPersonne />,
     },
   ];
 

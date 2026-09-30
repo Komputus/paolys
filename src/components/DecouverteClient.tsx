@@ -20,6 +20,8 @@ export type Candidat = {
   bio: string | null;
   city: string | null;
   verifie: boolean;
+  situationMatrimoniale: string | null;
+  nombreEnfants: string | null;
   photoUrls: string[];
   prompts: { question: string; reponse: string }[];
 };
@@ -60,7 +62,13 @@ export function DecouverteClient({
   candidats: Candidat[];
   viewerAUnePhoto: boolean;
   estPremium: boolean;
-  filtres: { ageMin?: string; ageMax?: string; verifie: boolean };
+  filtres: {
+    ageMin?: string;
+    ageMax?: string;
+    verifie: boolean;
+    situationMatrimoniale?: string;
+    nombreEnfants?: string;
+  };
   locale: Locale;
   compteLikes: number;
 }) {
@@ -140,6 +148,35 @@ export function DecouverteClient({
         />
         {d.decouverte.verifiesUniquement}
       </label>
+      <div>
+        <label className="text-xs text-muted">{d.decouverte.situationMatrimoniale}</label>
+        <select
+          name="situationMatrimoniale"
+          defaultValue={filtres.situationMatrimoniale ?? ""}
+          className="field-warm mt-1 text-sm"
+        >
+          <option value="">{d.decouverte.peuImporte}</option>
+          <option value="celibataire">{d.profilCompleter.situationCelibataire}</option>
+          <option value="divorce">{d.profilCompleter.situationDivorce}</option>
+          <option value="veuf">{d.profilCompleter.situationVeuf}</option>
+          <option value="separe">{d.profilCompleter.situationSepare}</option>
+        </select>
+      </div>
+      <div>
+        <label className="text-xs text-muted">{d.decouverte.nombreEnfants}</label>
+        <select
+          name="nombreEnfants"
+          defaultValue={filtres.nombreEnfants ?? ""}
+          className="field-warm mt-1 text-sm"
+        >
+          <option value="">{d.decouverte.peuImporte}</option>
+          <option value="0">{d.profilCompleter.enfants0}</option>
+          <option value="1">{d.profilCompleter.enfants1}</option>
+          <option value="2">{d.profilCompleter.enfants2}</option>
+          <option value="3">{d.profilCompleter.enfants3}</option>
+          <option value="4+">{d.profilCompleter.enfants4Plus}</option>
+        </select>
+      </div>
       <button type="submit" className="btn-primary-warm text-sm">
         {d.decouverte.appliquer}
       </button>
@@ -349,6 +386,33 @@ function CarteCandidat({
           {candidat.city && <ChipFait icone="📍" texte={candidat.city} />}
           {candidat.verifie && (
             <ChipFait icone="✓" texte={d.decouverte.verifie} accent="lagune" />
+          )}
+          {candidat.situationMatrimoniale && (
+            <ChipFait
+              icone="💍"
+              texte={
+                {
+                  celibataire: d.profilCompleter.situationCelibataire,
+                  divorce: d.profilCompleter.situationDivorce,
+                  veuf: d.profilCompleter.situationVeuf,
+                  separe: d.profilCompleter.situationSepare,
+                }[candidat.situationMatrimoniale] ?? candidat.situationMatrimoniale
+              }
+            />
+          )}
+          {candidat.nombreEnfants && (
+            <ChipFait
+              icone="👶"
+              texte={
+                {
+                  "0": d.profilCompleter.enfants0,
+                  "1": d.profilCompleter.enfants1,
+                  "2": d.profilCompleter.enfants2,
+                  "3": d.profilCompleter.enfants3,
+                  "4+": d.profilCompleter.enfants4Plus,
+                }[candidat.nombreEnfants] ?? candidat.nombreEnfants
+              }
+            />
           )}
         </div>
 

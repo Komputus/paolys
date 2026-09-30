@@ -16,6 +16,8 @@ type ProfilAffiche = {
   bio: string | null;
   city: string | null;
   photo_verified: boolean;
+  situation_matrimoniale: string | null;
+  nombre_enfants: string | null;
   prompts: { prompt_key: string; reponse: string }[] | null;
 };
 
@@ -86,6 +88,37 @@ export default async function VoirProfilPage({
             </p>
           )}
           {data.city && <p className="mt-2 text-muted">{data.city}</p>}
+          {(data.situation_matrimoniale || data.nombre_enfants) && (
+            <p className="mt-2 flex flex-wrap justify-center gap-2 text-sm text-foreground/70">
+              {data.situation_matrimoniale && (
+                <span>
+                  💍{" "}
+                  {
+                    {
+                      celibataire: d.profilCompleter.situationCelibataire,
+                      divorce: d.profilCompleter.situationDivorce,
+                      veuf: d.profilCompleter.situationVeuf,
+                      separe: d.profilCompleter.situationSepare,
+                    }[data.situation_matrimoniale]
+                  }
+                </span>
+              )}
+              {data.nombre_enfants && (
+                <span>
+                  👶{" "}
+                  {
+                    {
+                      "0": d.profilCompleter.enfants0,
+                      "1": d.profilCompleter.enfants1,
+                      "2": d.profilCompleter.enfants2,
+                      "3": d.profilCompleter.enfants3,
+                      "4+": d.profilCompleter.enfants4Plus,
+                    }[data.nombre_enfants]
+                  }
+                </span>
+              )}
+            </p>
+          )}
           {data.bio && <p className="mt-4 text-foreground/80">{data.bio}</p>}
 
           {prompts.length > 0 && (

@@ -14,6 +14,8 @@ type ProfilADecouvrir = {
   city: string | null;
   gender: string;
   photo_verified: boolean;
+  situation_matrimoniale: string | null;
+  nombre_enfants: string | null;
   prompts: { prompt_key: string; reponse: string }[] | null;
 };
 
@@ -24,6 +26,14 @@ export default async function DecouvertePage({
   const ageMin = typeof params.ageMin === "string" ? params.ageMin : undefined;
   const ageMax = typeof params.ageMax === "string" ? params.ageMax : undefined;
   const verifie = typeof params.verifie === "string" ? params.verifie : undefined;
+  const situationMatrimoniale =
+    typeof params.situationMatrimoniale === "string" && params.situationMatrimoniale
+      ? params.situationMatrimoniale
+      : undefined;
+  const nombreEnfants =
+    typeof params.nombreEnfants === "string" && params.nombreEnfants
+      ? params.nombreEnfants
+      : undefined;
   const locale = await getLocale();
   const d = getDictionary(locale);
 
@@ -62,6 +72,8 @@ export default async function DecouvertePage({
       age_min: ageMin ? Number(ageMin) : null,
       age_max: ageMax ? Number(ageMax) : null,
       verifies_uniquement: verifie === "true",
+      situation_matrimoniale_filtre: situationMatrimoniale ?? null,
+      nombre_enfants_filtre: nombreEnfants ?? null,
     }),
     supabase.rpc("combien_m_ont_aime"),
   ]);
@@ -84,6 +96,8 @@ export default async function DecouvertePage({
         bio: p.bio,
         city: p.city,
         verifie: p.photo_verified,
+        situationMatrimoniale: p.situation_matrimoniale,
+        nombreEnfants: p.nombre_enfants,
         photoUrls,
         prompts: (p.prompts ?? [])
           .filter((pr) => pr.prompt_key in d.prompts.options)
@@ -100,7 +114,13 @@ export default async function DecouvertePage({
       candidats={candidats}
       viewerAUnePhoto={viewerAUnePhoto}
       estPremium={estPremium}
-      filtres={{ ageMin, ageMax, verifie: verifie === "true" }}
+      filtres={{
+        ageMin,
+        ageMax,
+        verifie: verifie === "true",
+        situationMatrimoniale,
+        nombreEnfants,
+      }}
       locale={locale}
       compteLikes={compteLikes}
     />
