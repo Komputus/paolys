@@ -320,6 +320,18 @@ const fr = {
     seDeconnecter: "Se déconnecter",
     modifierProfil: "Modifier mon profil",
   },
+  photos: {
+    titre: "Mes photos",
+    texte: (max: number) => `Ajoute jusqu'à ${max} photos pour mieux te présenter.`,
+    principale: "Principale",
+    principaleVerifiee: "✓ Vérifiée",
+    notePrincipaleVerrouillee:
+      "Ta photo principale est vérifiée et ne peut plus être changée ni supprimée — ajoute d'autres photos autour.",
+    definirPrincipale: "Mettre en avant",
+    supprimer: "Supprimer",
+    ajouter: "Ajouter cette photo",
+    emplacementVide: "Vide",
+  },
   profilModifier: {
     titre: "Modifier mon profil",
     verificationTitre: "Vérification par photo",
@@ -872,6 +884,18 @@ const en: Dictionary = {
     adminSignalements: "Admin · Reports",
     seDeconnecter: "Sign out",
     modifierProfil: "Edit my profile",
+  },
+  photos: {
+    titre: "My photos",
+    texte: (max: number) => `Add up to ${max} photos to present yourself better.`,
+    principale: "Main",
+    principaleVerifiee: "✓ Verified",
+    notePrincipaleVerrouillee:
+      "Your main photo is verified and can no longer be changed or deleted — add other photos around it.",
+    definirPrincipale: "Set as main",
+    supprimer: "Delete",
+    ajouter: "Add this photo",
+    emplacementVide: "Empty",
   },
   profilModifier: {
     titre: "Edit my profile",

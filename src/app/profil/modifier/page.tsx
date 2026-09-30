@@ -161,6 +161,24 @@ export default async function ModifierProfilPage() {
         </div>
 
         <div className="card-warm divide-y" style={{ borderColor: "var(--line)" }}>
+          <Link
+            href="/profil/photos"
+            className="flex items-center gap-3 px-5 py-4 transition-colors hover:bg-black/[0.02]"
+            style={{ borderColor: "var(--line)" }}
+          >
+            <span
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
+              style={{ background: "var(--mangue-tint)", color: "var(--mangue-dark)" }}
+            >
+              <IconPhoto />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="text-body-lg block truncate text-foreground">
+                {d.photos.titre}
+              </span>
+            </span>
+            <IconChevron />
+          </Link>
           {lignes.map((ligne) => (
             <Link
               key={ligne.champ}
@@ -271,6 +289,16 @@ function IconTexte() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
       <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconPhoto() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" />
+      <circle cx="9" cy="10" r="1.5" stroke="currentColor" strokeWidth="2" />
+      <path d="M4 17l5-5 4 4 3-3 4 4" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
     </svg>
   );
 }

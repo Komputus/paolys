@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { calculerAge } from "@/lib/age";
 import { validerImage } from "@/lib/validate-image";
+import { compresserImage } from "@/lib/compress-image";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 
@@ -65,12 +66,12 @@ export async function enregistrerProfil(formData: FormData) {
       redirect(`/profil/completer?erreur=${encodeURIComponent(validation.raison)}`);
     }
 
-    const extension = photo.name.split(".").pop();
-    const path = `${user.id}/${Date.now()}.${extension}`;
+    const imageCompressee = await compresserImage(photo);
+    const path = `${user.id}/${Date.now()}.jpg`;
 
     const { error: uploadError } = await supabase.storage
       .from("profile-photos")
-      .upload(path, photo, { contentType: photo.type });
+      .upload(path, imageCompressee, { contentType: "image/jpeg" });
 
     if (uploadError) {
       redirect(`/profil/completer?erreur=${encodeURIComponent(uploadError.message)}`);
