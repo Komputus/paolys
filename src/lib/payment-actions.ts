@@ -22,7 +22,7 @@ export async function demarrerAbonnement(formData: FormData) {
     redirect("/connexion");
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const transactionId = `paolys-${user.id}-${Date.now()}`;
 
   const { error: insertError } = await supabase.from("payments").insert({

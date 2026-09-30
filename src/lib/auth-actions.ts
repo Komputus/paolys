@@ -70,7 +70,7 @@ export async function signOut() {
 
 export async function demanderReinitialisation(formData: FormData) {
   const email = String(formData.get("email") ?? "");
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   const supabase = await createClient();
   // Erreur volontairement ignoree : ne jamais reveler si un email existe ou

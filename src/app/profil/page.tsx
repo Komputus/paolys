@@ -182,7 +182,7 @@ export default async function ProfilPage() {
             {d.profil.inviteTexte(compteParraines ?? 0)}
           </p>
           <CopierLien
-            texte={`${process.env.NEXT_PUBLIC_SITE_URL ?? ""}/inscription?ref=${profil.referral_code}`}
+            texte={`${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/inscription?ref=${profil.referral_code}`}
             locale={locale}
           />
         </div>
