@@ -24,6 +24,21 @@ export async function GET(request: Request) {
     if (!error) {
       return NextResponse.redirect(`${origin}/profil`);
     }
+
+    // Cas frequent : le lien de confirmation/reinitialisation est ouvert
+    // dans un autre navigateur que celui ayant initie la demande (ex.
+    // inscription sur Chrome, email ouvert sur Brave) — le "code verifier"
+    // PKCE est stocke localement et n'existe donc pas ailleurs. L'email est
+    // neanmoins deja confirme cote serveur a ce stade ; seule la connexion
+    // automatique echoue, donc on invite simplement a se connecter.
+    if (error.message.toLowerCase().includes("code verifier")) {
+      return NextResponse.redirect(
+        `${origin}/connexion?erreur=${encodeURIComponent(
+          "Ton compte est confirmé. Connecte-toi avec ton email et ton mot de passe pour continuer.",
+        )}`,
+      );
+    }
+
     return NextResponse.redirect(
       `${origin}/connexion?erreur=${encodeURIComponent(error.message)}`,
     );
