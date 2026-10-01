@@ -7,7 +7,7 @@ function creerClient() {
   return new Resend(process.env.RESEND_API_KEY);
 }
 
-const EXPEDITEUR = "Paolys <info@paolys.com>";
+const EXPEDITEUR = "Paolys <noreply@paolys.com>";
 
 export async function envoyerResumeQuotidien(params: {
   destinataire: string;
