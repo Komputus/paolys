@@ -85,6 +85,12 @@ export default async function DecouvertePage({
   const lignes = (profils ?? []) as ProfilADecouvrir[];
   const compteLikes = (compteLikesData as number | null) ?? 0;
 
+  // Enregistre une vue (une seule fois par personne, deduplique cote SQL)
+  // pour chaque profil montre en decouverte — alimente le resume quotidien.
+  await Promise.all(
+    lignes.map((p) => supabase.rpc("enregistrer_vue", { p_viewed_id: p.id })),
+  );
+
   const candidats: Candidat[] = await Promise.all(
     lignes.map(async (p) => {
       const photoUrls = await urlsPhotosSignees(supabase, p.id);
