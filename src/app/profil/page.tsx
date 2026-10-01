@@ -105,7 +105,7 @@ export default async function ProfilPage() {
         {profil.city && <p className="mt-2 text-muted">{profil.city}</p>}
         {profil.bio && <p className="mt-4 text-foreground/80">{profil.bio}</p>}
 
-        {estPremium ? (
+        {estPremium && (
           <p className="mt-4 inline-block rounded-full bg-brand-light px-4 py-1.5 text-sm font-medium text-brand-dark">
             {d.profil.premiumActif(
               new Date(profil.premium_until!).toLocaleDateString(
@@ -113,25 +113,6 @@ export default async function ProfilPage() {
               ),
             )}
           </p>
-        ) : (
-          <div
-            className="card-warm mt-4 p-5 text-center"
-            style={{ border: "1px solid var(--mangue)", background: "var(--mangue-tint)" }}
-          >
-            <p className="text-heading" style={{ color: "var(--lagune)" }}>
-              {d.profil.passerPremiumTitre}
-            </p>
-            <p className="text-body mt-1" style={{ color: "var(--ink)" }}>
-              {d.profil.passerPremiumTexte}
-            </p>
-            <Link
-              href="/premium"
-              className="btn-primary-warm mt-4 block w-full text-center"
-              style={{ background: "var(--lagune)", boxShadow: "none" }}
-            >
-              {d.profil.passerPremium}
-            </Link>
-          </div>
         )}
 
         {estPremium && (
@@ -191,6 +172,15 @@ export default async function ProfilPage() {
           <Link href="/decouverte" className="btn-primary-warm">
             {d.profil.decouvrirProfils}
           </Link>
+          {!estPremium && (
+            <Link
+              href="/premium"
+              className="btn-primary-warm"
+              style={{ background: "var(--violet)", boxShadow: "none" }}
+            >
+              {d.profil.passerPremium}
+            </Link>
+          )}
           <Link href="/aimes-par" className="btn-secondary-warm">
             {d.profil.quiTaAime}
           </Link>

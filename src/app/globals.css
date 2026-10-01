@@ -19,12 +19,14 @@
   --mangue: #d9821f;
   --mangue-tint: #fbe4c3;
   --lagune: #146b68;
+  --violet: #6d4aa6;
   --line: #e9d7b0;
 
   --mangue-dark: color-mix(in srgb, var(--mangue) 80%, black);
   --azur-dark: color-mix(in srgb, var(--azur) 80%, black);
   --azur-tint: color-mix(in srgb, var(--azur) 14%, white);
   --lagune-tint: color-mix(in srgb, var(--lagune) 14%, white);
+  --violet-tint: color-mix(in srgb, var(--violet) 14%, white);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -102,6 +104,8 @@
   --color-mangue: var(--mangue);
   --color-mangue-tint: var(--mangue-tint);
   --color-lagune: var(--lagune);
+  --color-violet: var(--violet);
+  --color-violet-tint: var(--violet-tint);
   --color-line: var(--line);
 
   --font-sans: var(--font-nunito);

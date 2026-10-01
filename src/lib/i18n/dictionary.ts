@@ -318,8 +318,6 @@ const fr = {
         n > 0 ? ` ${n} déjà invité(e)s.` : ""
       }`,
     passerPremium: "Passer à Paolys+",
-    passerPremiumTitre: "✨ Débloque Paolys+",
-    passerPremiumTexte: "Vois qui t'a déjà aimé, filtres avancés, boost de visibilité — un peu plus de confort, sans jamais rendre l'essentiel payant.",
     premiumActif: (date: string) => `✨ Paolys+ actif jusqu'au ${date}`,
     decouvrirProfils: "Découvrir des profils",
     quiTaAime: "Qui t'a aimé",
@@ -899,8 +897,6 @@ const en: Dictionary = {
         n > 0 ? ` ${n} already invited.` : ""
       }`,
     passerPremium: "Upgrade to Paolys+",
-    passerPremiumTitre: "✨ Unlock Paolys+",
-    passerPremiumTexte: "See who already liked you, advanced filters, visibility boost — a bit more comfort, never a paywall on the essentials.",
     premiumActif: (date: string) => `✨ Paolys+ active until ${date}`,
     decouvrirProfils: "Discover profiles",
     quiTaAime: "Who liked you",

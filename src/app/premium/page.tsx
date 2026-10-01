@@ -98,9 +98,9 @@ export default async function PremiumPage({
         {/* Rappel : ce qui reste gratuit */}
         <div
           className="card-warm mt-4 p-6"
-          style={{ border: "1px solid var(--lagune)", background: "var(--lagune-tint)" }}
+          style={{ border: "1px solid var(--violet)", background: "var(--violet-tint)" }}
         >
-          <p className="text-heading" style={{ color: "var(--lagune)" }}>
+          <p className="text-heading" style={{ color: "var(--violet)" }}>
             {d.premium.gratuitTitre}
           </p>
           <p className="mt-1 text-sm" style={{ color: "var(--ink)" }}>
@@ -121,7 +121,7 @@ export default async function PremiumPage({
           {estPremium ? (
             <p
               className="rounded-lg px-4 py-3 text-center text-sm font-medium"
-              style={{ background: "var(--lagune-tint)", color: "var(--lagune)" }}
+              style={{ background: "var(--violet-tint)", color: "var(--violet)" }}
             >
               {d.premium.abonnementActif(
                 new Date(profil!.premium_until!).toLocaleDateString(
@@ -202,7 +202,7 @@ function IconCoche() {
   return (
     <span
       className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[10px] text-white"
-      style={{ background: "var(--lagune)" }}
+      style={{ background: "var(--violet)" }}
     >
       ✓
     </span>

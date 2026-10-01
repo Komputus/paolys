@@ -70,14 +70,14 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
             onClick={() => setCanal("mobile_money")}
             className="flex items-center gap-3 rounded-xl border p-3 text-left transition-colors"
             style={{
-              borderColor: canal === "mobile_money" ? "var(--lagune)" : "var(--line)",
-              background: canal === "mobile_money" ? "var(--lagune-tint)" : "var(--surface-200)",
+              borderColor: canal === "mobile_money" ? "var(--violet)" : "var(--line)",
+              background: canal === "mobile_money" ? "var(--violet-tint)" : "var(--surface-200)",
               borderWidth: canal === "mobile_money" ? "2px" : "1px",
             }}
           >
             <span
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
-              style={{ background: "var(--lagune)" }}
+              style={{ background: "var(--violet)" }}
             >
               <IconTelephone />
             </span>
@@ -92,8 +92,8 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
             onClick={() => setCanal("carte")}
             className="flex items-center gap-3 rounded-xl border p-3 text-left transition-colors"
             style={{
-              borderColor: canal === "carte" ? "var(--lagune)" : "var(--line)",
-              background: canal === "carte" ? "var(--lagune-tint)" : "var(--surface-200)",
+              borderColor: canal === "carte" ? "var(--violet)" : "var(--line)",
+              background: canal === "carte" ? "var(--violet-tint)" : "var(--surface-200)",
               borderWidth: canal === "carte" ? "2px" : "1px",
             }}
           >
@@ -126,7 +126,7 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
         </p>
       )}
 
-      <p className="flex items-center justify-center gap-1.5 text-center text-xs" style={{ color: "var(--lagune)" }}>
+      <p className="flex items-center justify-center gap-1.5 text-center text-xs" style={{ color: "var(--violet)" }}>
         <IconCadenas />
         {d.premium.paiementSecurise}
       </p>
@@ -160,8 +160,8 @@ function IconCarte() {
 function IconCadenas() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-      <rect x="5" y="11" width="14" height="9" rx="2" stroke="var(--lagune)" strokeWidth="2" />
-      <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="var(--lagune)" strokeWidth="2" />
+      <rect x="5" y="11" width="14" height="9" rx="2" stroke="var(--violet)" strokeWidth="2" />
+      <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="var(--violet)" strokeWidth="2" />
     </svg>
   );
 }
