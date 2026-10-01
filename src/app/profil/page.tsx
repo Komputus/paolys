@@ -157,17 +157,6 @@ export default async function ProfilPage() {
           </Link>
         )}
 
-        <div className="card-warm mt-6 p-4 text-left">
-          <p className="text-sm font-medium text-foreground">{d.profil.inviteAmis}</p>
-          <p className="mt-1 text-xs text-foreground/60">
-            {d.profil.inviteTexte(compteParraines ?? 0)}
-          </p>
-          <CopierLien
-            texte={`${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/inscription?ref=${profil.referral_code}`}
-            locale={locale}
-          />
-        </div>
-
         <div className="mt-8 flex flex-col gap-3">
           <Link href="/decouverte" className="btn-primary-warm">
             {d.profil.decouvrirProfils}
@@ -215,6 +204,18 @@ export default async function ProfilPage() {
             </>
           )}
         </div>
+
+        <div className="card-warm mt-6 p-4 text-left">
+          <p className="text-sm font-medium text-foreground">{d.profil.inviteAmis}</p>
+          <p className="mt-1 text-xs text-foreground/60">
+            {d.profil.inviteTexte(compteParraines ?? 0)}
+          </p>
+          <CopierLien
+            texte={`${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/inscription?ref=${profil.referral_code}`}
+            locale={locale}
+          />
+        </div>
+
         <form action={signOut} className="mt-4">
           <button type="submit" className="btn-tertiary-warm">
             {d.profil.seDeconnecter}
