@@ -22,6 +22,8 @@ export async function signUp(formData: FormData) {
     redirect(`/inscription?erreur=${encodeURIComponent(d.auth.erreurConditions)}`);
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signUp({
     email,
@@ -31,6 +33,7 @@ export async function signUp(formData: FormData) {
         display_name: displayName,
         referred_by_code: codeParrainage || null,
       },
+      emailRedirectTo: `${siteUrl}/auth/callback`,
     },
   });
 
