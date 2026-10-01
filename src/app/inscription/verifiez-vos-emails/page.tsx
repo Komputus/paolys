@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
 import { EnTeteLogo } from "@/components/EnTeteLogo";
@@ -24,6 +25,9 @@ export default async function VerifiezVosEmailsPage() {
       <div className="mt-4 max-w-sm">
         <h1 className="text-2xl font-semibold text-brand">{d.verifiezEmails.titre}</h1>
         <p className="mt-4 text-foreground/70">{d.verifiezEmails.texte}</p>
+        <Link href="/connexion" className="btn-primary-warm mt-6 inline-block">
+          {d.auth.seConnecter}
+        </Link>
       </div>
       </div>
     </div>
