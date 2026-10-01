@@ -25,8 +25,8 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
             onClick={() => setFormule("semaine")}
             className="rounded-xl border p-4 text-left transition-colors"
             style={{
-              borderColor: formule === "semaine" ? "var(--mangue)" : "var(--line)",
-              background: formule === "semaine" ? "var(--mangue-tint)" : "var(--surface-200)",
+              borderColor: formule === "semaine" ? "var(--violet)" : "var(--line)",
+              background: formule === "semaine" ? "var(--violet-tint)" : "var(--surface-200)",
               borderWidth: formule === "semaine" ? "2px" : "1px",
             }}
           >
@@ -42,14 +42,14 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
             onClick={() => setFormule("mois")}
             className="relative rounded-xl border p-4 text-left transition-colors"
             style={{
-              borderColor: formule === "mois" ? "var(--mangue)" : "var(--line)",
-              background: formule === "mois" ? "var(--mangue-tint)" : "var(--surface-200)",
+              borderColor: formule === "mois" ? "var(--violet)" : "var(--line)",
+              background: formule === "mois" ? "var(--violet-tint)" : "var(--surface-200)",
               borderWidth: formule === "mois" ? "2px" : "1px",
             }}
           >
             <span
               className="absolute -top-2.5 right-3 rounded-full px-2 py-0.5 text-[10px] font-bold text-white"
-              style={{ background: "var(--mangue)" }}
+              style={{ background: "var(--violet)" }}
             >
               {d.premium.badgePopulaire}
             </span>
@@ -116,6 +116,7 @@ export function PremiumCheckout({ locale }: { locale: Locale }) {
         disabled={!PAIEMENT_ACTIF}
         title={!PAIEMENT_ACTIF ? d.premium.paiementBientot : undefined}
         className="btn-primary-warm w-full disabled:opacity-50"
+        style={{ background: "var(--violet)", boxShadow: "none" }}
       >
         {d.premium.sAbonner(FORMULES[formule].montantFcfa)}
       </button>
