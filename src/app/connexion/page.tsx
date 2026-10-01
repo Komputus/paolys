@@ -13,7 +13,7 @@ import { getDictionary } from "@/lib/i18n/dictionary";
 export default async function ConnexionPage({
   searchParams,
 }: PageProps<"/connexion">) {
-  const { erreur } = await searchParams;
+  const { erreur, info } = await searchParams;
   const locale = await getLocale();
   const d = getDictionary(locale);
   const supabase = await createClient();
@@ -34,6 +34,15 @@ export default async function ConnexionPage({
           {d.auth.connexionTitre}
         </h1>
         <p className="mt-2 text-foreground/70">{d.auth.connexionSousTitre}</p>
+
+        {info && (
+          <p
+            className="mt-4 rounded-lg px-4 py-3 text-sm font-medium"
+            style={{ background: "var(--lagune-tint)", color: "var(--lagune)" }}
+          >
+            {info}
+          </p>
+        )}
 
         {erreur && (
           <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">

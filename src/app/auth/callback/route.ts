@@ -30,10 +30,11 @@ export async function GET(request: Request) {
     // inscription sur Chrome, email ouvert sur Brave) — le "code verifier"
     // PKCE est stocke localement et n'existe donc pas ailleurs. L'email est
     // neanmoins deja confirme cote serveur a ce stade ; seule la connexion
-    // automatique echoue, donc on invite simplement a se connecter.
+    // automatique echoue. Ce n'est pas un echec du point de vue utilisateur —
+    // affiche en "info" (style succes), jamais en "erreur" (rouge).
     if (error.message.toLowerCase().includes("code verifier")) {
       return NextResponse.redirect(
-        `${origin}/connexion?erreur=${encodeURIComponent(
+        `${origin}/connexion?info=${encodeURIComponent(
           "Ton compte est confirmé. Connecte-toi avec ton email et ton mot de passe pour continuer.",
         )}`,
       );
