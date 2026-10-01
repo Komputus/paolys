@@ -82,7 +82,7 @@ const fr = {
       {
         titre: "10. Contact",
         texte:
-          "Pour toute question relative aux présentes CGU, contacte-nous à l'adresse indiquée dans l'application.",
+          "Pour toute question relative aux présentes CGU, contacte-nous à info@paolys.com.",
       },
     ],
   },
@@ -140,7 +140,7 @@ const fr = {
       {
         titre: "8. Contact",
         texte:
-          "Pour toute question sur cette politique ou pour exercer tes droits, contacte-nous à l'adresse indiquée dans l'application.",
+          "Pour toute question sur cette politique ou pour exercer tes droits, contacte-nous à info@paolys.com.",
       },
     ],
   },
@@ -148,7 +148,7 @@ const fr = {
     titre: "Mentions légales",
     editeurTitre: "Éditeur du site",
     editeurAvertissement:
-      "⚠️ À compléter : nom de l'entité ou de l'auto-entrepreneur exploitant Paolys, forme juridique, adresse du siège, numéro d'immatriculation (RCCM) si applicable, et coordonnées de contact du responsable de la publication.",
+      "⚠️ À compléter : nom de l'entité ou de l'auto-entrepreneur exploitant Paolys, forme juridique, adresse du siège, numéro d'immatriculation (RCCM) si applicable. Contact du responsable de la publication : info@paolys.com.",
     hebergementTitre: "Hébergement",
     hebergementTexte:
       "L'application est hébergée par Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, États-Unis) et sa base de données par Supabase Inc.",
@@ -163,7 +163,6 @@ const fr = {
     titre: "Contact",
     intro: "Une question, un problème, un signalement ? Écris-nous, nous te répondrons dès que possible.",
     emailTitre: "Par e-mail",
-    emailAvertissement: "⚠️ À compléter : adresse e-mail de support à afficher ici (ex. contact@paolys.app).",
     signalerTitre: "Signaler un profil ou un abus",
     signalerTexte:
       "Si tu rencontres un comportement inapproprié sur l'application, utilise en priorité le bouton de signalement présent sur les profils et conversations concernés — cela nous permet d'agir plus vite.",
@@ -667,7 +666,7 @@ const en: Dictionary = {
       },
       {
         titre: "10. Contact",
-        texte: "For any question about these Terms, contact us at the address shown in the application.",
+        texte: "For any question about these Terms, contact us at info@paolys.com.",
       },
     ],
   },
@@ -724,7 +723,7 @@ const en: Dictionary = {
       },
       {
         titre: "8. Contact",
-        texte: "For any question about this policy or to exercise your rights, contact us at the address shown in the application.",
+        texte: "For any question about this policy or to exercise your rights, contact us at info@paolys.com.",
       },
     ],
   },
@@ -732,7 +731,7 @@ const en: Dictionary = {
     titre: "Legal Notice",
     editeurTitre: "Publisher",
     editeurAvertissement:
-      "⚠️ To be completed: name of the entity or sole proprietor operating Paolys, legal form, registered address, business registration number (RCCM) if applicable, and contact details of the publication manager.",
+      "⚠️ To be completed: name of the entity or sole proprietor operating Paolys, legal form, registered address, business registration number (RCCM) if applicable. Publication manager contact: info@paolys.com.",
     hebergementTitre: "Hosting",
     hebergementTexte:
       "The application is hosted by Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, USA) and its database by Supabase Inc.",
@@ -747,7 +746,6 @@ const en: Dictionary = {
     titre: "Contact",
     intro: "A question, a problem, something to report? Write to us, we'll get back to you as soon as possible.",
     emailTitre: "By email",
-    emailAvertissement: "⚠️ To be completed: support email address to display here (e.g. contact@paolys.app).",
     signalerTitre: "Report a profile or abuse",
     signalerTexte:
       "If you encounter inappropriate behaviour on the application, use the report button on the profiles and conversations concerned as a priority — this helps us act faster.",

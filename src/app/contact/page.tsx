@@ -5,6 +5,7 @@ import { BoutonProfil } from "@/components/BoutonProfil";
 import { createClient } from "@/lib/supabase/server";
 import { getLocale } from "@/lib/i18n/locale";
 import { getDictionary } from "@/lib/i18n/dictionary";
+import { EMAIL_CONTACT } from "@/lib/site-config";
 
 export default async function ContactPage() {
   const locale = await getLocale();
@@ -28,9 +29,12 @@ export default async function ContactPage() {
 
           <section>
             <h2 className="text-heading text-foreground">{d.contact.emailTitre}</h2>
-            <p className="mt-2 rounded-lg bg-brand-light px-4 py-3 text-sm text-brand-dark">
-              {d.contact.emailAvertissement}
-            </p>
+            <a
+              href={`mailto:${EMAIL_CONTACT}`}
+              className="mt-2 inline-block rounded-lg bg-brand-light px-4 py-3 text-sm font-medium text-brand-dark underline"
+            >
+              {EMAIL_CONTACT}
+            </a>
           </section>
 
           <section>
