@@ -81,7 +81,7 @@ export default async function PremiumPage({
                 <li key={f.titre} className="flex gap-3">
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                    style={{ background: "var(--mangue-tint)" }}
+                    style={{ background: "var(--violet-tint)" }}
                   >
                     <Icone />
                   </span>
@@ -142,15 +142,15 @@ export default async function PremiumPage({
 function IconOeil() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="var(--mangue-dark)" strokeWidth="2" strokeLinejoin="round" />
-      <circle cx="12" cy="12" r="3" stroke="var(--mangue-dark)" strokeWidth="2" />
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="var(--violet)" strokeWidth="2" strokeLinejoin="round" />
+      <circle cx="12" cy="12" r="3" stroke="var(--violet)" strokeWidth="2" />
     </svg>
   );
 }
 
 function IconEtincelle() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--mangue-dark)">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--violet)">
       <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z" />
     </svg>
   );
@@ -161,12 +161,12 @@ function IconFusee() {
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
       <path
         d="M12 2c3 2 5 6 5 10 0 2-.5 4-1.5 5.5L12 21l-3.5-3.5C7.5 16 7 14 7 12c0-4 2-8 5-10z"
-        stroke="var(--mangue-dark)"
+        stroke="var(--violet)"
         strokeWidth="2"
         strokeLinejoin="round"
       />
-      <circle cx="12" cy="10" r="2" stroke="var(--mangue-dark)" strokeWidth="2" />
-      <path d="M9 18l-2 3M15 18l2 3" stroke="var(--mangue-dark)" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="12" cy="10" r="2" stroke="var(--violet)" strokeWidth="2" />
+      <path d="M9 18l-2 3M15 18l2 3" stroke="var(--violet)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
@@ -174,8 +174,8 @@ function IconFusee() {
 function IconRetourArriere() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-      <path d="M4 12a8 8 0 1 0 3-6.3" stroke="var(--mangue-dark)" strokeWidth="2" strokeLinecap="round" />
-      <path d="M4 3v5h5" stroke="var(--mangue-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 12a8 8 0 1 0 3-6.3" stroke="var(--violet)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4 3v5h5" stroke="var(--violet)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -183,9 +183,9 @@ function IconRetourArriere() {
 function IconOeilBarre() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="var(--mangue-dark)" strokeWidth="2" strokeLinejoin="round" />
-      <circle cx="12" cy="12" r="3" stroke="var(--mangue-dark)" strokeWidth="2" />
-      <path d="M3 21L21 3" stroke="var(--mangue-dark)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="var(--violet)" strokeWidth="2" strokeLinejoin="round" />
+      <circle cx="12" cy="12" r="3" stroke="var(--violet)" strokeWidth="2" />
+      <path d="M3 21L21 3" stroke="var(--violet)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
@@ -193,7 +193,7 @@ function IconOeilBarre() {
 function IconFiltre() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-      <path d="M4 5h16M7 12h10M10 19h4" stroke="var(--mangue-dark)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4 5h16M7 12h10M10 19h4" stroke="var(--violet)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
